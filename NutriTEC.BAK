@@ -143,55 +143,57 @@ Cena: Crema de Calabaza. \n
       Rollitos de primavera 120g. \n
       Arroz 30 g. \n
       Aceite de oliva 1 cucharada. \n
-      4 rebanadas de 1/4 de pan integral (70g). \n').
+      4 rebanadas de 1/4 de pan integral (70g). \n
+Merienda después de la cena: 1 taza de fruta. \n').
 
 dieta('Dieta 13',"Vegana", "Dislipidemia",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio vegano.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   75g Copos de Avena. \n
+            300ml de bebida de soja. \n
+            Una manzana , o frutos rojos , fresas …. (o mix de frutas). \n
+Merienda Media Mañana:  1 banano mediano/grande + 50g Mantequilla de maní, almendras, marañón. \n
+Almuerzo: Ensalada verde variada. \n
+          1 manzana troceada. \n
+          40gr de nueces. \n
+          125gr de lentejas rojas o pasta de lentejas. \n
+Merienda tarde: Batido de 45gr proteína vegana y agua. \n
+Cena: 100g de arroz basmati con brócoli, cebolla, pimiento, curry. \n
+      200g de tofu sazonado con especias al gusto. \n
+Merienda después de la cena: 1 banano. \n').
 
 dieta('Dieta 14',"Proteica", "Diabetes",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio alto en proteínas.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   Batido de naranja natural. \n
+            1 tostada de mermelada. \n
+Merienda Media Mañana:  Sándwich de jamón y queso. \n
+                        1 porción de ensalada de atún. \n
+Almuerzo: 150g de carne de cerdo magra. \n
+          1 taza de arroz hervido. \n
+          Ensalada vegetales mixtos. \n
+          1 pera. \n
+Merienda tarde: 1 yogurt griego. \n
+                15 almendras. \n
+Cena: 100g Pasta con pechuga de pollo. \n
+      Ensalada vegetales mixtos. \n
+      Queso fresco. \n
+Merienda después de la cena: 1 taza de fruta. \n').
 
-dieta('Dieta 15',"NA", "Obesidad",'avanzado',5,'
+dieta('Dieta 15',"NA", "NA",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   180g de queso fresco 0%. \n
+            100g de avena. \n
+            1 vaso de leche semi descremada. \n
+            4 nueces. \n
+Merienda Media Mañana:  batido con 2 yogures naturales + 2 plátanos + 10 almendras crudas. \n
+Almuerzo: 150g de pechuga de pavo. \n
+          100g de pasta integral. \n
+          200g ensalada mixta. \n
+          Aceite de oliva. \n
+Merienda tarde: 100g de pavo. \n
+                2 rebanadas de pan integral. \n
+                1 manzana. \n
+Cena: brocoli cocido con 2 huevos cocidos. \n
+      150 g de pechuga de pollo. \n
+      100g de patata asada. \n
+      200g ensalada de repollo y tomate. \n
+Merienda después de la cena: 1 manzana. \n').
