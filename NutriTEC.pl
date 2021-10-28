@@ -13,88 +13,72 @@
 
 dieta('Dieta 1',"keto", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n ').
+Desayuno:   2 huevos revueltos con 30g de jamón y 30g de queso. \n
+Merienda Media Mañana:  100g de zanahoria con aguacate. \n
+Almuerzo: 1 pechuga de pollo a la parrilla con cebolla. \n
+          6 tomates cherry. \n
+          3 tazas de verduras mixtas y cocidas en aceite de oliva. \n
+Merienda tarde: Rodajas de aguacate con tomate y sal. \n
+Cena: 150g de salmón al horno. \n
+      100g de brócoli. \n').
 
 dieta('Dieta 2',"vegetariana", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio vegetariano.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   1 vaso de leche de soja. \n
+            Galletas de avena. \n
+            1 banano. \n
+            Almendras. \n
+Merienda Media Mañana:  Sandwich de pan integral con tofu, aguacate, tomate y lechuga. \n
+                        Jugo de naranja. \n
+Almuerzo:Lasaña vegetariana de verduras . \n
+Merienda tarde: Batido de banano con leche de coco y semillas de girasol. \n
+Cena: Coliflor asada con espinacas, almendras y salsa de yogurt. \n
+      Ensalada de vegetales frescos con semillas de ayote. \n').
 
 dieta('Dieta 3',"vegana", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio vegano.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   2 tostadas de pan integral. \n
+            1 tomate rallado. \n
+            Medio aguacate con orégano. \n
+            Semillas chía. \n
+Merienda Media Mañana:  Jugo de naranja con zanahoria. \n
+Almuerzo: Ensalada de hongos, espinaca y brócoli. \n
+          Arroz con alcachofas. \n
+Merienda tarde: 1 tostada integral con puré de papa, cebolla y especias. \n
+Cena: Fideos salteados con tofu y soja. \n').
 
 dieta('Dieta 4',"proteica", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio alto en proteínas.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
-Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Desayuno:   100g de atún. \n
+            3 huevos. \n
+            1 tomate picado con cebolla. \n
+Merienda Media Mañana:  1 yogurt griego. \n
+                        15 almendras. \n
+Almuerzo: 300g de bistec de res. \n
+          1 taza de brócoli. \n
+          1 papa \n
+          Media taza de zanahorias. \n
+          Media taza de cebolla picada. \n
+Merienda tarde: 1 taza de fruta. \n
+Cena: 2 quesadillas de pollo. \n').
       
 dieta('Dieta 5',"NA", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
-Desayuno:   . \n
-            . \n
-            . \n
-            . \n
+Desayuno:   1 vaso de leche descremada. \n
+            20g de pan. \n
+            Medio banano. \n
+            Media manzana. \n
 Merienda Media Mañana:  . \n
-Almuerzo: . \n
-          . \n
-          . \n
-          . \n
-Merienda tarde: . \n
-Cena: . \n
-      . \n
-      . \n
-      . \n').
+Almuerzo: 40 g de pan. \n
+          30 g de jamón york. \n
+          1 taza de café. \n
+Merienda tarde: 20 g de pan. \n
+                30 g de pechuga de pavo. \n
+                1 taza de café. \n
+Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g de puerro). \n
+      100 g de pollo asado. \n
+      30 g de arroz. \n
+      20 g de pan. \n').
 
 %----------------- AQUI VAN LAS DE MAU -----------------%
 
