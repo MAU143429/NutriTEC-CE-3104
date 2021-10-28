@@ -17,6 +17,7 @@ incioConversacion(Lista,Vacio):-saludo(Lista,Resto),nombre(Resto,Vacio).
 incioConversacion(Lista,Vacio):-saludo(Lista,Resto),horario(Resto,Vacio).
 incioConversacion(Lista,Vacio):-saludo(Lista,Vacio).
 
+% -------------------- Dietas --------------------%
 
 %saludos aceptados por NutriTEC
 saludo(['hola'|Lista],Lista).
@@ -87,19 +88,19 @@ miembro(X,[_|Y]):- miembro(X,Y).
 
 dieta('Dieta 6',"keto", "NA",'intermedio',1,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
-Desayuno:   ½ aguacate picado en rodaja.\n
+Desayuno:   ï¿½ aguacate picado en rodaja.\n
             2 huevos + rebanada de tocino.\n
             Preparar solo rociando aceite en spray (no oliva ni vegetal). \n
-Merienda Mañana:  ¼ pullado de semillas de girasol. \n
-        ½ naranja picada. \n
+Merienda Maï¿½ana:  ï¿½ pullado de semillas de girasol. \n
+        ï¿½ naranja picada. \n
 Almuerzo: 2 tazas de ensalada Mixta.\n
           2-3 hash Browns o tortitas de coliflor.\n
           1 rebanada de pan keto.\n
-Merienda tarde: 1 taza de café o té. \n
-                30g de mantequilla de maní. \n
-                1 muffin keto de arándanos. \n
-Cena: ½ Tortilla de bacalao. \n
-      1 lata de atún mediana en agua. \n
+Merienda tarde: 1 taza de cafï¿½ o tï¿½. \n
+                30g de mantequilla de manï¿½. \n
+                1 muffin keto de arï¿½ndanos. \n
+Cena: ï¿½ Tortilla de bacalao. \n
+      1 lata de atï¿½n mediana en agua. \n
       1 aguacate en trozos. \n
 ').
 
@@ -108,47 +109,47 @@ Puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 taza de leche de soya. \n
             Pullado de pipas de girasol. \n
             Banano en rebanadas. \n
-Merienda Mañana:  ½ taza de leche de coco. \n
+Merienda Maï¿½ana:  ï¿½ taza de leche de coco. \n
                   1 tostada de pan integral con mermelada. \n
 Almuerzo: 1 taza de Espaguetis con frutos secos. \n
-          ½ taza de sopa de quinua. \n
+          ï¿½ taza de sopa de quinua. \n
           1 higo. \n
 Merienda tarde: 1 taza de jugo de naranja. \n
                 1 bocadillo de tofu y tomate. \n
-Cena: Ensalada de alga wakame con sésamo. \n
-      ½ rebanada de pan integral con pure y aguacate.\n
+Cena: Ensalada de alga wakame con sï¿½samo. \n
+      ï¿½ rebanada de pan integral con pure y aguacate.\n
 ').
 
 dieta('Dieta 8',"vegana", "dislipidemia",'intermedio',3,'
 Puedes empezar con el siguiente plan alimenticio vegano. \n
-Desayuno: 1 smoothie bowl de piña y coco con frutos rojos. \n
+Desayuno: 1 smoothie bowl de piï¿½a y coco con frutos rojos. \n
           1 galleta de avena y manzana. \n
-          ½ pieza de frutas fresca. \n
-Merienda Mañana:  1 tazón de leche de soya . \n
-                  4-5 Almendras sin azúcar y nueces. \n
-Almuerzo: 2 Albóndigas veganas de brócoli con garbanzos y arroz. \n
-          ½ taza de ensalada de vegetales. \n
+          ï¿½ pieza de frutas fresca. \n
+Merienda Maï¿½ana:  1 tazï¿½n de leche de soya . \n
+                  4-5 Almendras sin azï¿½car y nueces. \n
+Almuerzo: 2 Albï¿½ndigas veganas de brï¿½coli con garbanzos y arroz. \n
+          ï¿½ taza de ensalada de vegetales. \n
           1 trozo de mandarina. \n
-Merienda tarde: 1 vaso de bebida vegetal sin azúcar. \n
+Merienda tarde: 1 vaso de bebida vegetal sin azï¿½car. \n
                 1 barrita de avena y frutos secos. \n
-Cena:  Salteado rápido de tofu y kale con sésamo. \n
-       ½ pimiento relleno de soja texturizada. \n
+Cena:  Salteado rï¿½pido de tofu y kale con sï¿½samo. \n
+       ï¿½ pimiento relleno de soja texturizada. \n
 ').
 
 dieta('Dieta 9',"proteica", "diabetes",'intermedio',4,'
-Puedes empezar con el siguiente plan alimenticio alto en proteínas. \n
+Puedes empezar con el siguiente plan alimenticio alto en proteï¿½nas. \n
 Desayuno: 2 huevos revueltos. \n
-          2 galletas de trigo con mantequilla de maní. \n
-          1 taza de café. \n
-Merienda Mañana: ½ Banano . \n
-                 1 galleta de proteína Whey. \n
+          2 galletas de trigo con mantequilla de manï¿½. \n
+          1 taza de cafï¿½. \n
+Merienda Maï¿½ana: ï¿½ Banano . \n
+                 1 galleta de proteï¿½na Whey. \n
 Almuerzo: 1 taza de Ensalada mixta. \n
           2 trozos de pechuga a la plancha. \n
           1 higo. \n
-Merienda tarde: Batido de proteína y creatina. \n
-                3-4 Almendras sin azúcar. \n
-Cena: ½ taza de rodajas de tomate. \n
-      1 ½ de Filet de pescado al horno. \n
+Merienda tarde: Batido de proteï¿½na y creatina. \n
+                3-4 Almendras sin azï¿½car. \n
+Cena: ï¿½ taza de rodajas de tomate. \n
+      1 ï¿½ de Filet de pescado al horno. \n
       Papas salteadas con culantro. \n
 ').
 
@@ -156,18 +157,208 @@ dieta('Dieta 10',"NA", "obesidad",'intermedio',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas. \n
 Desayuno: 2 huevos revueltos con aguacate y tomate. \n
           Manzana en rebanadas. \n
-Merienda Mañana:  ½ taza de té verde. \n
+Merienda Maï¿½ana:  ï¿½ taza de tï¿½ verde. \n
                   1 bolsita de palitos de zanahoria. \n
 Almuerzo: Estofado de ternera con verduras. \n
-          ½ taza pejibayes. \n
-Merienda tarde: 1 taza de café o té. \n
+          ï¿½ taza pejibayes. \n
+Merienda tarde: 1 taza de cafï¿½ o tï¿½. \n
                 1 tostada con miel. \n
 Cena:  Verduras al horno. \n
        Filet de res asado. \n
-       1 tortilla de maíz a la brasa. \n
+       1 tortilla de maï¿½z a la brasa. \n
 ').
 
 % Union
 
 buscarDieta(Nombre,Dieta,Padecimiento,Nivel,Dias, Detalle):- dieta(Nombre,Dieta,PadecimientoAux,Nivel,Dias, Detalle),Padecimiento\=PadecimientoAux,write('Le recomiendo la siguiente dieta: '),nl,write('Nombre de la dieta: '),write(Nombre),nl,write('Dias a la semana de entrenamiento: '),write(Dias),nl,write(Detalle).
 buscarDieta(Nombre,Dieta,Padecimiento,Nivel,Dias, Detalle):- write("Lo siento de momento no tengo ninguna dieta que se adapte a sus necesides"),nl.
+
+
+dieta('Dieta 1',"keto", "NA",'principiante',5,'
+Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
+Desayuno:   2 huevos revueltos con 30g de jamï¿½n y 30g de queso. \n
+Merienda Media Maï¿½ana:  100g de zanahoria con aguacate. \n
+Almuerzo: 1 pechuga de pollo a la parrilla con cebolla. \n
+          6 tomates cherry. \n
+          3 tazas de verduras mixtas y cocidas en aceite de oliva. \n
+Merienda tarde: Rodajas de aguacate con tomate y sal. \n
+Cena: 150g de salmï¿½n al horno. \n
+      100g de brï¿½coli. \n').
+
+dieta('Dieta 2',"vegetariana", "NA",'principiante',5,'
+Puedes empezar con el siguiente plan alimenticio vegetariano.\n
+Desayuno:   1 vaso de leche de soja. \n
+            Galletas de avena. \n
+            1 banano. \n
+            Almendras. \n
+Merienda Media Maï¿½ana:  Sandwich de pan integral con tofu, aguacate, tomate y lechuga. \n
+                        Jugo de naranja. \n
+Almuerzo:Lasaï¿½a vegetariana de verduras . \n
+Merienda tarde: Batido de banano con leche de coco y semillas de girasol. \n
+Cena: Coliflor asada con espinacas, almendras y salsa de yogurt. \n
+      Ensalada de vegetales frescos con semillas de ayote. \n').
+
+dieta('Dieta 3',"vegana", "NA",'principiante',5,'
+Puedes empezar con el siguiente plan alimenticio vegano.\n
+Desayuno:   2 tostadas de pan integral. \n
+            1 tomate rallado. \n
+            Medio aguacate con orï¿½gano. \n
+            Semillas chï¿½a. \n
+Merienda Media Maï¿½ana:  Jugo de naranja con zanahoria. \n
+Almuerzo: Ensalada de hongos, espinaca y brï¿½coli. \n
+          Arroz con alcachofas. \n
+Merienda tarde: 1 tostada integral con purï¿½ de papa, cebolla y especias. \n
+Cena: Fideos salteados con tofu y soja. \n').
+
+dieta('Dieta 4',"proteica", "NA",'principiante',5,'
+Puedes empezar con el siguiente plan alimenticio alto en proteï¿½nas.\n
+Desayuno:   100g de atï¿½n. \n
+            3 huevos. \n
+            1 tomate picado con cebolla. \n
+Merienda Media Maï¿½ana:  1 yogurt griego. \n
+                        15 almendras. \n
+Almuerzo: 300g de bistec de res. \n
+          1 taza de brï¿½coli. \n
+          1 papa \n
+          Media taza de zanahorias. \n
+          Media taza de cebolla picada. \n
+Merienda tarde: 1 taza de fruta. \n
+Cena: 2 quesadillas de pollo. \n').
+      
+dieta('Dieta 5',"NA", "NA",'principiante',5,'
+Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
+Desayuno:   1 vaso de leche descremada. \n
+            20g de pan. \n
+            Medio banano. \n
+            Media manzana. \n
+Merienda Media Maï¿½ana:  . \n
+Almuerzo: 40 g de pan. \n
+          30 g de jamï¿½n york. \n
+          1 taza de cafï¿½. \n
+Merienda tarde: 20 g de pan. \n
+                30 g de pechuga de pavo. \n
+                1 taza de cafï¿½. \n
+Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g de puerro). \n
+      100 g de pollo asado. \n
+      30 g de arroz. \n
+      20 g de pan. \n').
+
+%----------------- AQUI VAN LAS DE MAU -----------------%
+
+dieta('Dieta 11',"keto", "NA",'avanzado',5,'
+Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
+Desayuno:   Huevos revueltos con espinacas y salchicha fresca. \n
+            2 huevos grandes + 1 cucharada de aceite de coco. \n
+            30g queso mozzarella. \n
+            1 salchicha de cerdo (aproximadamente 48 g). \n
+            142,5 g de espinacas congeladas + 1,5 cucharadas de mantequilla.\n
+Merienda Media Maï¿½ana:  1/2 aguacate (67 g) + 56 g de queso suizo. \n
+Almuerzo: Salmï¿½n a la parrilla y ensalada. \n
+          115g de salmï¿½n atlï¿½ntico parrilla + 1 cucharada de mantequilla. \n
+          2.5 tazas de ensalada variada (aproximadamente 200g). \n
+          1 tomate mediano en trozos. \n
+          20 g de cebolla picada. \n
+          30g queso feta. \n
+          8 aceitunas negras y verdes. \n
+          1.5 cucharada de salsa de queso azul. \n
+Merienda tarde: 30 gramos de frutos secos + 1 yogur griego. \n
+Cena: Solomillo con hongos y vainicas salteadas. \n
+      100g Solomillo de cerdo. \n
+      2 cucharadas de aceite de oliva. \n
+      80g de salteado de hongos: 1/4 taza. \n
+      50 gramos vaincas frescas + 2 cucharadas aceite de coco. \n
+      Postre: 1 gelatina sin azï¿½car gelatina (120 g). \n').
+
+dieta('Dieta 12',"Vegetariana", "Celiaquia",'avanzado',5,'
+Puedes empezar con el siguiente plan alimenticio vegetariano. \n
+Desayuno:   2 tostadas integrales (40g) con una cucharada de aceite de oliva. \n
+            1 vaso de batido de soya enriquecida, con una cucharadita de cacao en polvo. \n
+            2 porciones de fruta. \n
+Merienda Maï¿½ana:  2 puï¿½ados de frutos secos (40 g). \n
+Almuerzo: Lentejas cocidas (80g), hierbas con aceite de oliva (1 cucharada). \n
+          Falafel 120 g. \n
+          Calabaza 75 g. \n
+          Cebolla 25 g. \n
+          Aceite de oliva (1 cucharadita). \n
+          1 tomate mediano (150g) con aceite de oliva. \n
+          4 rebanadas de 1/4 de pan integral (70 g). \n
+          2 porciones de fruta. \n
+          
+Merienda tarde: Galletas (4 u.). \n
+                2 yogures de soya, con dos cucharadas de postre con miel de caï¿½a. \n
+Cena: Crema de Calabaza. \n
+      Calabaza 250 g. \n
+      Cebolla 30 g. \n
+      Patata 100 g. \n
+      Aceite de oliva 1 cucharada. \n
+      Rollos Primvaera con flan de arroz. \n
+      Rollitos de primavera 120g. \n
+      Arroz 30 g. \n
+      Aceite de oliva 1 cucharada. \n
+      4 rebanadas de 1/4 de pan integral (70g). \n
+Merienda despuï¿½s de la cena: 1 taza de fruta. \n').
+
+dieta('Dieta 13',"Vegana", "Dislipidemia",'avanzado',5,'
+Puedes empezar con el siguiente plan alimenticio vegano.\n
+Desayuno:   75g Copos de Avena. \n
+            300ml de bebida de soja. \n
+            Una manzana , o frutos rojos , fresas ï¿½. (o mix de frutas). \n
+Merienda Media Maï¿½ana:  1 banano mediano/grande + 50g Mantequilla de manï¿½, almendras, maraï¿½ï¿½n. \n
+Almuerzo: Ensalada verde variada. \n
+          1 manzana troceada. \n
+          40gr de nueces. \n
+          125gr de lentejas rojas o pasta de lentejas. \n
+Merienda tarde: Batido de 45gr proteï¿½na vegana y agua. \n
+Cena: 100g de arroz basmati con brï¿½coli, cebolla, pimiento, curry. \n
+      200g de tofu sazonado con especias al gusto. \n
+Merienda despuï¿½s de la cena: 1 banano. \n').
+
+dieta('Dieta 14',"Proteica", "Diabetes",'avanzado',5,'
+Puedes empezar con el siguiente plan alimenticio alto en proteï¿½nas.\n
+Desayuno:   Batido de naranja natural. \n
+            1 tostada de mermelada. \n
+Merienda Media Maï¿½ana:  Sï¿½ndwich de jamï¿½n y queso. \n
+                        1 porciï¿½n de ensalada de atï¿½n. \n
+Almuerzo: 150g de carne de cerdo magra. \n
+          1 taza de arroz hervido. \n
+          Ensalada vegetales mixtos. \n
+          1 pera. \n
+Merienda tarde: 1 yogurt griego. \n
+                15 almendras. \n
+Cena: 100g Pasta con pechuga de pollo. \n
+      Ensalada vegetales mixtos. \n
+      Queso fresco. \n
+Merienda despuï¿½s de la cena: 1 taza de fruta. \n').
+
+dieta('Dieta 15',"NA", "NA",'avanzado',5,'
+Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
+Desayuno:   180g de queso fresco 0%. \n
+            100g de avena. \n
+            1 vaso de leche semi descremada. \n
+            4 nueces. \n
+Merienda Media Maï¿½ana:  batido con 2 yogures naturales + 2 plï¿½tanos + 10 almendras crudas. \n
+Almuerzo: 150g de pechuga de pavo. \n
+          100g de pasta integral. \n
+          200g ensalada mixta. \n
+          Aceite de oliva. \n
+Merienda tarde: 100g de pavo. \n
+                2 rebanadas de pan integral. \n
+                1 manzana. \n
+Cena: brocoli cocido con 2 huevos cocidos. \n
+      150 g de pechuga de pollo. \n
+      100g de patata asada. \n
+      200g ensalada de repollo y tomate. \n
+Merienda despuï¿½s de la cena: 1 manzana. \n').
+
+%------------------ Programa ------------------%
+
+% Mensajes predeterminados
+saludo:- write("NutriTEC: ï¿½Hola, encantado de ver que deseas mejorar tu estilo de vida! ï¿½En quï¿½ te puedo ayudar? \n").
+enfermedad:- write("ï¿½Tienes alguna enfermedad por la que has iniciado este proceso?\n").
+calorias:- write("ï¿½Tienes pensado una cantidad especï¿½fica de calorï¿½as diarias por consumir?\n").
+actividad:- write("ï¿½Cuï¿½ntas veces a la semana realizas actividad fï¿½sica?\n").
+tipoDieta:- write("ï¿½Tienes un tipo de dieta te gustarï¿½a realizar?\n").
+despedida:- write("ï¿½Con mucho gusto!\n").
+
+
+
