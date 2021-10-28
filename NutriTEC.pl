@@ -7,6 +7,10 @@
     ----------                          ----------
 */
 
+
+% -------------------- Dietas --------------------%
+
+
 dieta('Dieta 1',"keto", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   . \n
@@ -92,6 +96,7 @@ Cena: . \n
       . \n
       . \n').
 
+%----------------- AQUI VAN LAS DE MAU -----------------%
 
 dieta('Dieta 11',"keto", "NA",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
@@ -197,3 +202,16 @@ Cena: brocoli cocido con 2 huevos cocidos. \n
       100g de patata asada. \n
       200g ensalada de repollo y tomate. \n
 Merienda después de la cena: 1 manzana. \n').
+
+%------------------ Programa ------------------%
+
+% Mensajes predeterminados
+saludo:- write("NutriTEC: ¡Hola, encantado de ver que deseas mejorar tu estilo de vida! ¿En qué te puedo ayudar? \n").
+enfermedad:- write("¿Tienes alguna enfermedad por la que has iniciado este proceso?\n").
+calorias:- write("¿Tienes pensado una cantidad específica de calorías diarias por consumir?\n").
+actividad:- write("¿Cuántas veces a la semana realizas actividad física?\n").
+tipoDieta:- write("¿Tienes un tipo de dieta te gustaría realizar?\n").
+despedida:- write("¡Con mucho gusto!\n").
+
+
+
