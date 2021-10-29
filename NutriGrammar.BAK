@@ -3,22 +3,16 @@
 
 %--------------------Determinantes--------------------%
 % Articulos definidos
-determinante([el|S], S).
-determinante([la|S], S).
-determinante([lo|S], S).
-determinante([los|S], S).
-determinante([las|S], S).
-
 % Articulos indefinidos
-determinante([un|S], S).
-determinante([una|S], S).
-determinante([unos|S], S).
-determinante([unas|S], S).
+determinante([un|S],S).
+determinante([una|S],S).
+determinante([unos|S],S).
+determinante([unas|S],S).
 
-determinante([mucho|S], S).
-determinante([muchos|S], S).
-determinante([mucha|S], S).
-determinante([muchas|S], S).
+determinante([mucho|S],S).
+determinante([muchos|S],S).
+determinante([mucha|S],S).
+determinante([muchas|S],S).
 determinante([como|S],S).
 
 %------------------Palabras de saludo-----------------%
@@ -44,6 +38,7 @@ verbo([gustaría|S],S).
 verbo([tengo|S],S).
 verbo([llegar|S],S).
 verbo([estoy|S],S).
+verbo([realizo|S],S).
 verbo([practico|S],S).
 verbo([hago|S],S).
 verbo([quiero|S],S).
@@ -59,14 +54,16 @@ sustantivo()
 pronombre([yo|S])
 pronombre([mi|S], S).
 pronombre([mis|S], S).
+
+%---------------------Sintagmas---------------------%
 sintagma-nominal()
 
 sintagma-verbal()
 
 %----------------Palabras de despedida---------------%
-
-despedida([gracias|S],S).
 despedida([muchas|S],S).
+despedida([gracias|S],S).
+
 
 
 oracion()

@@ -14,7 +14,6 @@
 
 %-----------Mensajes predeterminados---------%
 saludo:- write("NutriTEC: ¡Hola, encantado de ver que deseas mejorar tu estilo de vida! ¿En qué te puedo ayudar? \n").
-iniciativa:- write("¡Excelente iniciativa! Estamos para asesorarte en todo lo que necesites.\n").
 enfermedad:- write("¿Tienes alguna enfermedad por la que has iniciado este proceso?\n").
 calorias:- write("¿Tienes pensado una cantidad específica de calorías diarias por consumir?\n").
 actividad:- write("¿Cuántas veces a la semana realizas actividad física?\n").
@@ -24,19 +23,7 @@ despedida:- write("¡Con mucho gusto!\n").
 %------------------Programa------------------%
 iniciar():- %RECIBIR HOLA NUTRITEC
             saludo,
-            %RECIBIR RESPUESTA DEL SALUDO
-            iniciativa,
-            enfermedad,
-            % respuesta enfermedad
-            calorias,
-            % respuesta calorias
-            actividad,
-            %% respuesta actividad
-            tipoDieta,
-            %LE ASIGNA DIETA
-            %Despedida del usuario
-            despedida.
-            
+            %
             pregunta_ejercicio(Ejercicio),
             write("Mr Trainer: Me parece muy buena su iniciativa"),nl,
             pregunta_frecuencia_realiza_AF(Frecuencia),
