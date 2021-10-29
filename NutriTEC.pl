@@ -36,7 +36,7 @@ seleccion(Lista,Vacio,Dieta):-afirmacion(Lista,Resto),Dieta(Resto,Vacio),atomics
 
 opcionesDieta(LowerCase):- nl, read_string(user_input, '\n', '.', _, Str),string_lower(Str,LowerCase),atomic_list_concat(Dieta, ' ', LowerCase),dieta(Dieta,Vacio).
 
-%Dietas reconocidos por MrTrainer
+%Dietas reconocidos por NutriTEC
 dieta(['keto'|Lista],Lista).
 dieta(['vegana'|Lista],Lista).
 dieta(['proteica'|Lista],Lista).
@@ -56,7 +56,7 @@ padecimientos(Lista,Vacio,Padecimiento):- padecimiento(Lista,Vacio),atomics_to_s
 
 padecimientosAux(Str):- write('Que tipo de padecimientos posee?\n'),nl, read_string(user_input, '\n', '.', _, Str),string_lower(Str,LowerCase),atomic_list_concat(Padecimiento, ' ', LowerCase),padecimiento(Padecimiento,Vacio).
 
-%Padecimientos reconocidos por MrTrainer
+%Padecimientos reconocidos por NutriTEC
 padecimiento(['celiquia'|Lista],Lista).
 padecimiento(['diabetes'|Lista],Lista).
 padecimiento(['dislipidemia'|Lista],Lista).
@@ -119,7 +119,7 @@ Cena: Ensalada de alga wakame con sésamo. \n
       ½ rebanada de pan integral con pure y aguacate.\n
 ').
 
-dieta('Dieta 8',"vegana", "dislipidemia",'intermedio',3,'
+dieta('Dieta 8',"vegana", "dislipidemia",'intermedio',4,'
 Puedes empezar con el siguiente plan alimenticio vegano. \n
 Desayuno: 1 smoothie bowl de piña y coco con frutos rojos. \n
           1 galleta de avena y manzana. \n
