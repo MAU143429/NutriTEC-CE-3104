@@ -27,7 +27,7 @@ iniciar():- %RECIBIR HOLA NUTRITEC
             %RECIBIR RESPUESTA DEL SALUDO
             iniciativa,
             enfermedad,
-            % respuesta enfermedad
+            pregunta_padecimiento(Padecimiento),
             calorias,
             % respuesta calorias
             actividad,
@@ -37,6 +37,7 @@ iniciar():- %RECIBIR HOLA NUTRITEC
             %Despedida del usuario
             despedida.
             
+            /**
             pregunta_ejercicio(Ejercicio),
             write("Mr Trainer: Me parece muy buena su iniciativa"),nl,
             pregunta_frecuencia_realiza_AF(Frecuencia),
@@ -44,12 +45,11 @@ iniciar():- %RECIBIR HOLA NUTRITEC
             pregunta_dias_descanso(DiasDescanso),
             consulta(Ejercicio,Padecimiento,DiasDescanso,Nivel,Rutina),
             write(Nivel),nl,write(Rutina),nl,nl,
-            despedida_del_usuario(Despedida).
+            despedida_del_usuario(Despedida).*/
 
 % Recolecta el ejercio dentro de una oracion
 %
 respuesta_usuario_ejercicios(Respuesta,Ejercicio):- oracion(Respuesta,[Ejercicio|_]).
-
 
 % Recolecta el padecimiento que tiene el usuario
 %
@@ -57,6 +57,14 @@ respuesta_usuario_padecimiento(Respuesta,Padecimiento):- oracion(Respuesta,[Pade
 
 respuesta_usuario_padecimiento(Respuesta,Padecimiento):- oracion(Respuesta,Padecimiento).
 
+
+% Pregunta por algun padecimiento
+%
+pregunta_padecimiento(Padecimiento):-
+                                    write("Usuario: "),readln(Respuesta),
+                                    respuesta_usuario_padecimiento(Respuesta,Padecimiento),!.
+
+pregunta_padecimiento(Padecimiento):- mensajeError,nl, mensajeErrorPadecimiento, nl, pregunta_padecimiento(Padecimiento).
 
 
 % Recolecta la frecuencia que el usuario realiza ejercicio a la semana
