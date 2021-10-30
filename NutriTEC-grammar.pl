@@ -27,52 +27,54 @@ iniciar():- %RECIBIR HOLA NUTRITEC
             %RECIBIR RESPUESTA DEL SALUDO
             iniciativa,
             enfermedad,
-            pregunta_padecimiento(Padecimiento),
+            obtener_padecimiento(Padecimiento),
             calorias,
-            % respuesta calorias
+            obtener_cantidad_calorias(Calorias),
             actividad,
-            %% respuesta actividad
+            obtener_cantidad_actividad_fisica(Dias),
             tipoDieta,
             %LE ASIGNA DIETA
             %Despedida del usuario
             despedida.
-            
-            /**
-            pregunta_ejercicio(Ejercicio),
-            write("Mr Trainer: Me parece muy buena su iniciativa"),nl,
-            pregunta_frecuencia_realiza_AF(Frecuencia),
-            pregunta_padecimiento(Padecimiento),
-            pregunta_dias_descanso(DiasDescanso),
-            consulta(Ejercicio,Padecimiento,DiasDescanso,Nivel,Rutina),
-            write(Nivel),nl,write(Rutina),nl,nl,
-            despedida_del_usuario(Despedida).*/
 
-% Recolecta el ejercio dentro de una oracion
-%
-respuesta_usuario_ejercicios(Respuesta,Ejercicio):- oracion(Respuesta,[Ejercicio|_]).
+%---------Obtener el padecimiento que el usuario escribe en la oracion---------%
 
-% Recolecta el padecimiento que tiene el usuario
-%
-respuesta_usuario_padecimiento(Respuesta,Padecimiento):- oracion(Respuesta,[Padecimiento|_]),!.
+%busca si el padecimiento esta definido en el programa
+encontrar_padecimiento(Padecimiento):- padecimiento(Padecimiento,_).
 
-respuesta_usuario_padecimiento(Respuesta,Padecimiento):- oracion(Respuesta,Padecimiento).
+%Obtiene la respuesta del usuario con readln
+obtener_padecimiento(Padecimiento):- write("Usuario: "),readln(Entrada), analizar_oracion_padecimiento(Entrada,Padecimiento),!.
+
+%analiza la oracion para encontrar el padecimiento
+analizar_oracion_padecimiento(Entrada,Padecimiento):- oracion(Entrada,[Padecimiento|_]),!.
+analizar_oracion_padecimiento(Entrada,Padecimiento):- oracion(Entrada,Padecimiento).
 
 
-% Pregunta por algun padecimiento
-%
-pregunta_padecimiento(Padecimiento):-
-                                    write("Usuario: "),readln(Respuesta),
-                                    respuesta_usuario_padecimiento(Respuesta,Padecimiento),!.
+%---------Obtienen la cantidad de calorias que el usuario escribe en la oracion---------%
 
-pregunta_padecimiento(Padecimiento):- mensajeError,nl, mensajeErrorPadecimiento, nl, pregunta_padecimiento(Padecimiento).
+%busca si la cantidad de calorias esta definida en el programa
+encontrar_cantidad_calorias(Calorias):- calorias(Calorias,_).
+
+%Obtiene la respuesta del usuario con readln
+obtener_cantidad_calorias(Calorias):- write("Usuario: "),readln(Entrada), analizar_oracion_calorias(Entrada,Cantidad_calorias).
+
+%analiza la oracion para encontrar el numero -> cantidad de calorias
+analizar_oracion_calorias(Entrada,Cantidad_calorias):- oracion(Entrada,[Cantidad_calorias|_]).
+analizar_oracion_calorias(Entrada,Cantidad_calorias):- getNumber(Entrada,Cantidad_calorias).
 
 
-% Recolecta la frecuencia que el usuario realiza ejercicio a la semana
-%
-respuesta_usuario_frecuencia(Respuesta,Frecuencia):- getNumber(Respuesta,Frecuencia),1>Frecuencia,mensajeErrorFrecuenciaPoco.
+%-------------Analiza si la respuesta tiene un numero con la funcion number--------------%
+encontrar_numero([N|X],N):-number(X).
+encontrar_numero([_|X],Y):-encontrar_numero(X,Y).
 
-respuesta_usuario_frecuencia(Respuesta,Frecuencia):- getNumber(Respuesta,Frecuencia),Frecuencia>6,mensajeErrorFrecuenciaMucho.
 
-respuesta_usuario_frecuencia(Respuesta,Frecuencia):- getNumber(Respuesta,Frecuencia).
+/**Obtiene la cantidad de veces o dias (0-7) de actividad fisica que el usuario escribe en la oracion
+   para determinar el nivel (principiante, intermedio, avanzado) en el que se clasificara al usuario*/
+   
+%Obtiene la respuesta del usuario con readln
+obtener_cantidad_actividad_fisica(Dias):- write("Usuario: "),readln(Entrada), analizar_oracion_actividad_fisica(Entrada,Dias).
 
-iniciar()
+%analiza la oracion para encontrar el numero -> cantidad de dias o veces semanales
+analizar_oracion_actividad_fisica(Entrada,Dias):- getNumber(Entrada,Dias).
+
+

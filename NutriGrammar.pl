@@ -76,6 +76,17 @@ preposicion([segun|S],S).
 preposicion([son|S],S).
 preposicion([sobre|S],S).
 
+
+%------------Niveles de actividad fisica-------------%
+nivel(0,'principiante')
+nivel(1,'principiante')
+nivel(2,'principiante')
+nivel(3,'intermedio')
+nivel(4,'intermedio')
+nivel(5,'avanzado')
+nivel(6,'avanzado')
+nivel(7,'avanzado')
+
 %---------------------Sintagmas----------------------%
 
 %-------------------Sintagma verbal------------------%
@@ -106,11 +117,6 @@ despedida([adios|S],S).
 despedida([chao|S],S).
 despedida([nutriTEC|S],S).
 
-existeDeporte([Deporte|[]]):- existe_deporte(Deporte).
-
-existePadecimiento([Padecimiento|[]]):- existe_padecimiento(Padecimiento).
-
-
 
 %----------------Responde con no----------------%
 respuesta_no([no|[]],[]).
@@ -122,31 +128,26 @@ respuesta_si([si|[]],[]).
 respuesta_si([si|_]).
 
 
-% Oraciones de deporte
-%
-oracion([X|_],X):-existe_deporte(X).
-oracion(Oracion,S):-entrada(Oracion,Oracion1), sintagma_nominal(Oracion1,Oracion2),sintagma_verbal(Oracion2,S),existeDeporte(S).
-oracion(Oracion,S):-entrada(Oracion,Oracion1), sintagma_verbal(Oracion1,S),existeDeporte(S).
+%------------Analiza la oracion para encontrar padecimiento-------------%
 
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existeDeporte(S).
-oracion(Oracion,S):-sintagma_verbal(Oracion,S),existeDeporte(S).
-
-
-
+leer_padecimiento([P|[]]):- encontrar_padecimiento(P).
+oracion([P|_],P):- encontrar_padecimiento(P).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_padecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_padecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_padecimiento(S).
+%-----------------------------------------------------------------------%
 
 
+%--------------Analiza la oracion para encontrar calorias---------------%
 
-% Oraciones de padecimiento
-%
-oracion([X|_],X):-existe_padecimiento(X).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),existePadecimiento(S).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existePadecimiento(S).
-oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),existePadecimiento(S).
-oracion(Oracion,S):-sintagma_verbal(Oracion,S),existePadecimiento(S).
-
-
-
-
+leer_cantidad_calorias([C|[]]):- encontrar_cantidad_calorias(C).
+oracion([C|_],C):- encontrar_cantidad_calorias(C).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_cantidad_calorias(S).
+%-----------------------------------------------------------------------%
 
 
 
