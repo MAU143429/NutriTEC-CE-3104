@@ -36,10 +36,10 @@ verbo([deseo|S],S).
 verbo([diagnosticado|S],S).
 verbo([llevar|S],S).
 verbo([han|S],S).
-verbo([había|S],S).
+verbo([habï¿½a|S],S).
 verbo([empezar|S],S).
 verbo([corro|S],S).
-verbo([gustaría|S],S).
+verbo([gustarï¿½a|S],S).
 verbo([tengo|S],S).
 verbo([llegar|S],S).
 verbo([estoy|S],S).
@@ -75,6 +75,29 @@ preposicion([por|S],S).
 preposicion([segun|S],S).
 preposicion([son|S],S).
 preposicion([sobre|S],S).
+
+%---------------------Sintagmas----------------------%
+
+%-------------------Sintagma verbal------------------%
+sintagma_verbal(Oracion,S):- verbo(Oracion,Oracion1),verbo(Oracion1,Oracion2),preposicion(Oracion2,S).
+sintagma_verbal(Oracion,S):- verbo(Oracion,Oracion1),verbo(Oracion1,S).
+sintagma_verbal(Oracion,S):- verbo(Oracion,S).
+
+%------------------Sintagma nominal------------------%
+sintagma_nominal(Oracion,S):-pronombre(Oracion,S).
+
+%---------------Entradas en la oracion---------------%
+entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,Oracion4),saludo(Oracion4,S).
+entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,S).
+entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,S).
+entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,S).
+entrada(Oracion,S):-saludo(Oracion,S).
+
+%---------------Salidas en la oracion---------------%
+salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,Oracion3),despedida(Oracion3,S).
+salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,S).
+salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,S).
+salida(Oracion,S):-despedida(Oracion,S).
 
 
 %------------Niveles de actividad fisica-------------%
@@ -117,10 +140,52 @@ despedida([adios|S],S).
 despedida([chao|S],S).
 despedida([nutriTEC|S],S).
 
+existeDeporte([Deporte|[]]):- existe_deporte(Deporte).
+
+existePadecimiento([Padecimiento|[]]):- existe_padecimiento(Padecimiento).
+%----------------Responde con no----------------%
+respuesta_no([no|[]],[]).
+respuesta_no([no|_]).
+
+
 
 %----------------Responde con no----------------%
 respuesta_no([no|[]],[]).
 respuesta_no([no|_]).
+
+
+%----------------Responde con si----------------%
+respuesta_si([si|[]],[]).
+respuesta_si([si|_]).
+
+
+% Oraciones de deporte
+%
+oracion([X|_],X):-existe_deporte(X).
+oracion(Oracion,S):-entrada(Oracion,Oracion1), sintagma_nominal(Oracion1,Oracion2),sintagma_verbal(Oracion2,S),existeDeporte(S).
+oracion(Oracion,S):-entrada(Oracion,Oracion1), sintagma_verbal(Oracion1,S),existeDeporte(S).
+
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existeDeporte(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),existeDeporte(S).
+
+
+
+
+
+
+% Oraciones de padecimiento
+%
+oracion([X|_],X):-existe_padecimiento(X).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),existePadecimiento(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),existePadecimiento(S).
+
+
+
+
+
+
 
 
 %----------------Responde con si----------------%
