@@ -50,6 +50,7 @@ verbo([quiero|S],S).
 verbo([hacer|S],S).
 verbo([padezco|S],S).
 verbo([padecer|S],S).
+verbo([realizar|S],S).
 
 %---------------------Pronombres---------------------%
 
@@ -93,13 +94,13 @@ padecimiento(ninguno,p5).
 padecimiento(no,p5).
 
 %-------------------Dietas--------------------%
-dieta(keto,p1).
-dieta(cetogenica,p1).
-dieta(proteica,p2).
-dieta(vegetariana,p3).
-dieta(vegana,p4).
-dieta(ninguno,p5).
-dieta(no,p5).
+tipo_dieta(keto,p1).
+tipo_dieta(cetogenica,p1).
+tipo_dieta(proteica,p2).
+tipo_dieta(vegetariana,p3).
+tipo_dieta(vegana,p4).
+tipo_dieta(ninguno,p5).
+tipo_dieta(no,p5).
 
 %-------------------Calorias--------------------%
 calorias(1000,principiante).
@@ -237,11 +238,25 @@ encontrar_cantidad_calorias(Calorias):- calorias(Calorias,_).
 
 leer_cantidad_calorias([C|[]]):-encontrar_cantidad_calorias(C).
 oracion([C|_],C):-encontrar_cantidad_calorias(C).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_cantidad_calorias(S).
 %-----------------------------------------------------------------------%
+
+%------------Analiza la oracion para encontrar tipo de dieta------------%
+%busca si la dieta deseada esta definida en el programa
+encontrar_tipo_dieta(Dieta):- tipo_dieta(Dieta,_).
+
+palabra_dieta([dieta|S],S).
+
+leer_tipo_dieta([D|[]]):-encontrar_tipo_dieta(D).
+oracion([D|_],D):-encontrar_tipo_dieta(D).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),palabra_dieta(Oracion3,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-respuesta_no(Oracion,S),leer_tipo_dieta(S).
 
 
 

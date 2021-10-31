@@ -50,6 +50,7 @@ verbo([quiero|S],S).
 verbo([hacer|S],S).
 verbo([padezco|S],S).
 verbo([padecer|S],S).
+verbo([realizar|S],S).
 
 %---------------------Pronombres---------------------%
 
@@ -93,13 +94,13 @@ padecimiento(ninguno,p5).
 padecimiento(no,p5).
 
 %-------------------Dietas--------------------%
-dieta(keto,p1).
-dieta(cetogenica,p1).
-dieta(proteica,p2).
-dieta(vegetariana,p3).
-dieta(vegana,p4).
-dieta(ninguno,p5).
-dieta(no,p5).
+tipo_dieta(keto,p1).
+tipo_dieta(cetogenica,p1).
+tipo_dieta(proteica,p2).
+tipo_dieta(vegetariana,p3).
+tipo_dieta(vegana,p4).
+tipo_dieta(ninguno,p5).
+tipo_dieta(no,p5).
 
 %-------------------Calorias--------------------%
 calorias(1000,principiante).
@@ -175,7 +176,6 @@ ayuda([normal|S],S).
 ayuda([mejorar|S],S).
 ayuda([salud|S],S).
 ayuda([sobrepeso|S],S).
-ayuda([sobrepeso|S],S).
 ayuda([diabetes|S],S).
 ayuda([dislipidemia|S],S).
 ayuda([hiperlipidemia|S],S).
@@ -194,6 +194,7 @@ oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Ora
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion5,Oracion6),ayuda(Oracion6,Oracion7),ayuda(Oracion7,S).
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),pronombre(Oracion3,Oracion4),ayuda(Oracion4,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),ayuda(Oracion3,S).
+oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),ayuda(Oracion2,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),sintagma_nominal(Oracion2,Oracion3),ayuda(Oracion3,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),preposicion(Oracion2,Oracion3),sintagma_verbal(Oracion3,Oracion4),determinante(Oracion4,Oracion5),ayuda(Oracion5,Oracion6),preposicion(Oracion6,Oracion7),ayuda(Oracion7,Oracion8),ayuda(Oracion8,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),preposicion(Oracion2,Oracion3),sintagma_verbal(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),determinante(Oracion6,Oracion7),ayuda(Oracion7,Oracion8),ayuda(Oracion8,S).
@@ -220,6 +221,7 @@ encontrar_padecimiento(Padecimiento):- padecimiento(Padecimiento,_).
 leer_padecimiento([P|[]]):-encontrar_padecimiento(P).
 oracion([P|_],P):-encontrar_padecimiento(P).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_padecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_padecimiento(S).
@@ -236,11 +238,25 @@ encontrar_cantidad_calorias(Calorias):- calorias(Calorias,_).
 
 leer_cantidad_calorias([C|[]]):-encontrar_cantidad_calorias(C).
 oracion([C|_],C):-encontrar_cantidad_calorias(C).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_cantidad_calorias(S).
 %-----------------------------------------------------------------------%
+
+%------------Analiza la oracion para encontrar tipo de dieta------------%
+%busca si la dieta deseada esta definida en el programa
+encontrar_tipo_dieta(Dieta):- tipo_dieta(Dieta,_).
+
+palabra_dieta([dieta|S],S).
+
+leer_tipo_dieta([D|[]]):-encontrar_tipo_dieta(D).
+oracion([D|_],D):-encontrar_tipo_dieta(D).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),palabra_dieta(Oracion3,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-respuesta_no(Oracion,S),leer_tipo_dieta(S).
 
 
 

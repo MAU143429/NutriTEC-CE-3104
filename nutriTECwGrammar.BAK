@@ -18,7 +18,7 @@ enfermedad:- write("NutriTEC: ¿Tienes alguna enfermedad por la que has iniciado 
 calorias:- write("NutriTEC: ¿Tienes pensado una cantidad específica de calorías diarias por consumir?\n").
 actividad:- write("NutriTEC: ¿Cuántas veces a la semana realizas actividad física?\n").
 tipoDieta:- write("NutriTEC: ¿Tienes algún tipo de dieta te gustaría realizar?\n").
-despedida:- write("NutriTEC: ¡Con mucho gusto!\n").
+despedida:- write("NutriTEC: ¡Hasta luego, fue un placer ayudarte!\n").
 
 %---------Obtener el saludo que el usuario escribe en la oracion---------%
 
@@ -71,6 +71,17 @@ obtener_cantidad_actividad_fisica(Dias):- write("Usuario: "),readln(Entrada), an
 %analiza la oracion para encontrar el numero (cantidad de dias o veces semanales)
 analizar_oracion_actividad_fisica(Entrada,Dias):- encontrar_numero(Entrada,Dias).
 
+
+%---------Obtener el tipo de dieta que el usuario escribe en la oracion---------%
+
+%Obtiene la respuesta del usuario con readln
+obtener_tipo_dieta(Dieta):- write("Usuario: "),readln(Entrada), analizar_oracion_tipo_dieta(Entrada,Dieta),!.
+
+%analiza la oracion para encontrar el tipo de dieta que quiere
+analizar_oracion_tipo_dieta(Entrada,Dieta):- oracion(Entrada,[Dieta|_]),!.
+analizar_oracion_tipo_dieta(Entrada,Dieta):- oracion(Entrada,Dieta).
+
+
 %---------Obtener la despedida que el usuario escribe en la oracion---------%
 
 %Obtiene la respuesta del usuario con readln
@@ -81,17 +92,10 @@ analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,[Despedi
 analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,Despedida).
 
 %------------------Programa------------------%
-iniciar():- obtener_saludo(Saludo),
-            saludo,
-            obtener_respuesta_ayuda(Ayuda),
-            iniciativa,
-            enfermedad,
-            obtener_padecimiento(Padecimiento),
-            calorias,
-            obtener_cantidad_calorias(Calorias),
-            actividad,
-            obtener_cantidad_actividad_fisica(Dias),
-            %tipoDieta,
-            %LE ASIGNA DIETA
-            obtener_despedida(Despedida)
-            despedida.
+iniciar():- obtener_saludo(Saludo),saludo,
+            obtener_respuesta_ayuda(Ayuda),iniciativa,
+            enfermedad,obtener_padecimiento(Padecimiento),
+            calorias,obtener_cantidad_calorias(Calorias),
+            actividad,obtener_cantidad_actividad_fisica(Dias),
+            tipoDieta,obtener_tipo_dieta(Dieta),%LE ASIGNA LA DIETA
+            obtener_despedida(Despedida),despedida.
