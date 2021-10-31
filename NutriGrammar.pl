@@ -36,10 +36,10 @@ verbo([deseo|S],S).
 verbo([diagnosticado|S],S).
 verbo([llevar|S],S).
 verbo([han|S],S).
-verbo([hab�a|S],S).
+verbo([habia|S],S).
 verbo([empezar|S],S).
 verbo([corro|S],S).
-verbo([gustar�a|S],S).
+verbo([gustaria|S],S).
 verbo([tengo|S],S).
 verbo([llegar|S],S).
 verbo([estoy|S],S).
@@ -53,7 +53,7 @@ verbo([padecer|S],S).
 
 %---------------------Pronombres---------------------%
 
-pronombre([yo|S])
+pronombre([yo|S], S).
 pronombre([mi|S], S).
 pronombre([me|S], S).
 pronombre([mis|S], S).
@@ -126,14 +126,14 @@ calorias(3000,avanzado).
 
 
 %------------Niveles de actividad fisica-------------%
-nivel(0,'principiante')
-nivel(1,'principiante')
-nivel(2,'principiante')
-nivel(3,'intermedio')
-nivel(4,'intermedio')
-nivel(5,'avanzado')
-nivel(6,'avanzado')
-nivel(7,'avanzado')
+nivel(0,'principiante').
+nivel(1,'principiante').
+nivel(2,'principiante').
+nivel(3,'intermedio').
+nivel(4,'intermedio').
+nivel(5,'avanzado').
+nivel(6,'avanzado').
+nivel(7,'avanzado').
 
 %---------------------Sintagmas----------------------%
 
@@ -177,9 +177,11 @@ respuesta_si([si|_]).
 
 
 %------------Analiza la oracion para encontrar padecimiento-------------%
+%busca si el padecimiento esta definido en el programa
+encontrar_padecimiento(Padecimiento):- padecimiento(Padecimiento,_).
 
-leer_padecimiento([P|[]]):- encontrar_padecimiento(P).
-oracion([P|_],P):- encontrar_padecimiento(P).
+leer_padecimiento([P|[]]):-encontrar_padecimiento(P).
+oracion([P|_],P):-encontrar_padecimiento(P).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_padecimiento(S).
@@ -188,9 +190,11 @@ oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_padecimiento(S).
 
 
 %--------------Analiza la oracion para encontrar calorias---------------%
+%busca si la cantidad de calorias esta definida en el programa
+encontrar_cantidad_calorias(Calorias):- calorias(Calorias,_).
 
-leer_cantidad_calorias([C|[]]):- encontrar_cantidad_calorias(C).
-oracion([C|_],C):- encontrar_cantidad_calorias(C).
+leer_cantidad_calorias([C|[]]):-encontrar_cantidad_calorias(C).
+oracion([C|_],C):-encontrar_cantidad_calorias(C).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_cantidad_calorias(S).
