@@ -17,7 +17,7 @@ iniciativa:- write("NutriTEC: ¡Excelente iniciativa! Estamos para asesorarte en 
 enfermedad:- write("NutriTEC: ¿Tienes alguna enfermedad por la que has iniciado este proceso?\n").
 calorias:- write("NutriTEC: ¿Tienes pensado una cantidad específica de calorías diarias por consumir?\n").
 actividad:- write("NutriTEC: ¿Cuántas veces a la semana realizas actividad física?\n").
-tipoDieta:- write("NutriTEC: ¿Tienes un tipo de dieta te gustaría realizar?\n").
+tipoDieta:- write("NutriTEC: ¿Tienes algún tipo de dieta te gustaría realizar?\n").
 despedida:- write("NutriTEC: ¡Con mucho gusto!\n").
 
 %---------Obtener el saludo que el usuario escribe en la oracion---------%
@@ -25,7 +25,7 @@ despedida:- write("NutriTEC: ¡Con mucho gusto!\n").
 %Obtiene la respuesta del usuario con readln
 obtener_saludo(Saludo):- write("Usuario: "),readln(Entrada), analizar_oracion_saludo(Entrada,Saludo),!.
 
-%analiza la oracion para encontrar el padecimiento
+%analiza la oracion
 analizar_oracion_saludo(Entrada,Saludo):- saludo_inicial(Entrada,[Saludo|_]),!. %cut
 analizar_oracion_saludo(Entrada,Saludo):- saludo_inicial(Entrada,Saludo).
 
@@ -34,7 +34,7 @@ analizar_oracion_saludo(Entrada,Saludo):- saludo_inicial(Entrada,Saludo).
 %Obtiene la respuesta del usuario con readln
 obtener_respuesta_ayuda(Ayuda):- write("Usuario: "),readln(Entrada), analizar_oracion_respuesta_ayuda(Entrada,Ayuda),!. %cut
 
-%analiza la oracion para encontrar el padecimiento
+%analiza la oracion
 analizar_oracion_respuesta_ayuda(Entrada,Ayuda):- oracion_ayuda(Entrada,[Ayuda|_]),!. %cut
 analizar_oracion_respuesta_ayuda(Entrada,Ayuda):- oracion_ayuda(Entrada,Ayuda).
 
@@ -71,6 +71,15 @@ obtener_cantidad_actividad_fisica(Dias):- write("Usuario: "),readln(Entrada), an
 %analiza la oracion para encontrar el numero (cantidad de dias o veces semanales)
 analizar_oracion_actividad_fisica(Entrada,Dias):- encontrar_numero(Entrada,Dias).
 
+%---------Obtener la despedida que el usuario escribe en la oracion---------%
+
+%Obtiene la respuesta del usuario con readln
+obtener_despedida(Despedida):- write("Usuario: "),readln(Entrada), analizar_oracion_despedida(Entrada,Despedida),!.
+
+%analiza la oracion
+analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,[Despedida|_]),!. %cut
+analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,Despedida).
+
 %------------------Programa------------------%
 iniciar():- obtener_saludo(Saludo),
             saludo,
@@ -82,7 +91,7 @@ iniciar():- obtener_saludo(Saludo),
             obtener_cantidad_calorias(Calorias),
             actividad,
             obtener_cantidad_actividad_fisica(Dias),
-            tipoDieta,
+            %tipoDieta,
             %LE ASIGNA DIETA
-            %Despedida del usuario
+            obtener_despedida(Despedida),
             despedida.
