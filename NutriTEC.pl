@@ -224,7 +224,7 @@ Almuerzo: 300g de bistec de res. \n
           Media taza de cebolla picada. \n
 Merienda tarde: 1 taza de fruta. \n
 Cena: 2 quesadillas de pollo. \n').
-      
+
 dieta('Dieta 5',"NA", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   1 vaso de leche descremada. \n
