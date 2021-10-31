@@ -60,6 +60,7 @@ pronombre([mis|S], S).
 
 %-------------------Preposiciones--------------------%
 
+preposicion([y|S],S).
 preposicion([a|S],S).
 preposicion([bajo|S],S).
 preposicion([cabe|S],S).
@@ -145,18 +146,12 @@ sintagma_verbal(Oracion,S):- verbo(Oracion,S).
 %------------------Sintagma nominal------------------%
 sintagma_nominal(Oracion,S):-pronombre(Oracion,S).
 
-%---------------Entradas en la oracion---------------%
-entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,Oracion4),saludo(Oracion4,S).
-entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,S).
-entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,S).
-entrada(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,S).
-entrada(Oracion,S):-saludo(Oracion,S).
-
-%---------------Salidas en la oracion---------------%
-salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,Oracion3),despedida(Oracion3,S).
-salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,S).
-salida(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,S).
-salida(Oracion,S):-despedida(Oracion,S).
+%---------------Lee el saludo en la oracion---------------%
+saludo_inicial(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,Oracion4),saludo(Oracion4,S).
+saludo_inicial(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,Oracion3),saludo(Oracion3,S).
+saludo_inicial(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,Oracion2),saludo(Oracion2,S).
+saludo_inicial(Oracion,S):-saludo(Oracion,Oracion1),saludo(Oracion1,S).
+saludo_inicial(Oracion,S):-saludo(Oracion,S).
 
 %----------------Palabras de despedida---------------%
 despedida([muchas|S],S).
@@ -165,15 +160,57 @@ despedida([adios|S],S).
 despedida([chao|S],S).
 despedida([nutriTEC|S],S).
 
+%---------------Lee la despedida en la oracion---------------%
+despedida_final(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,Oracion3),despedida(Oracion3,S).
+despedida_final(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,Oracion2),despedida(Oracion2,S).
+despedida_final(Oracion,S):-despedida(Oracion,Oracion1),despedida(Oracion1,S).
+despedida_final(Oracion,S):-despedida(Oracion,S).
+
+%----------------Palabras para recibir en que lo ayuda nutritec---------------%
+ayuda([estilo|S],S).
+ayuda([vida|S],S).
+ayuda([saludable|S],S).
+ayuda([peso|S],S).
+ayuda([normal|S],S).
+ayuda([mejorar|S],S).
+ayuda([salud|S],S).
+ayuda([sobrepeso|S],S).
+ayuda([sobrepeso|S],S).
+ayuda([diabetes|S],S).
+ayuda([dislipidemia|S],S).
+ayuda([hiperlipidemia|S],S).
+ayuda([hipercolesterolemia|S],S).
+ayuda([obesidad|S],S).
+ayuda([gordura|S],S).
+ayuda([gordo|S],S).
+ayuda([gorda|S],S).
+ayuda([celiaquia|S],S).
+ayuda([celiaco|S],S).
+ayuda([celiaca|S],S).
+
+%------------Analiza la oracion para leer en que ayuda al usuario-------------%
+
+oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S).
+oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion5,Oracion6),ayuda(Oracion6,Oracion7),ayuda(Oracion7,S).
+oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),pronombre(Oracion3,Oracion4),ayuda(Oracion4,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),ayuda(Oracion3,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),sintagma_nominal(Oracion2,Oracion3),ayuda(Oracion3,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),preposicion(Oracion2,Oracion3),sintagma_verbal(Oracion3,Oracion4),determinante(Oracion4,Oracion5),ayuda(Oracion5,Oracion6),preposicion(Oracion6,Oracion7),ayuda(Oracion7,Oracion8),ayuda(Oracion8,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),preposicion(Oracion2,Oracion3),sintagma_verbal(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),determinante(Oracion6,Oracion7),ayuda(Oracion7,Oracion8),ayuda(Oracion8,S).
+oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),ayuda(Oracion5,Oracion6),ayuda(Oracion6,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),preposicion(Oracion3,Oracion4),ayuda(Oracion4,Oracion5),ayuda(Oracion5,S).
+%-----------------------------------------------------------------------%
 
 %----------------Responde con no----------------%
 respuesta_no([no|[]],[]).
 respuesta_no([no|_]).
+respuesta_no([no|S],S).
 
 
 %----------------Responde con si----------------%
 respuesta_si([si|[]],[]).
 respuesta_si([si|_]).
+respuesta_si([si|S],S).
 
 
 %------------Analiza la oracion para encontrar padecimiento-------------%
@@ -183,11 +220,15 @@ encontrar_padecimiento(Padecimiento):- padecimiento(Padecimiento,_).
 leer_padecimiento([P|[]]):-encontrar_padecimiento(P).
 oracion([P|_],P):-encontrar_padecimiento(P).
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S),leer_padecimiento(S).
-oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
+oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_padecimiento(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_nominal(Oracion1,Oracion2),sintagma_verbal(Oracion2,Oracion3),preposicion(Oracion3,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_nominal(Oracion1,Oracion2),sintagma_verbal(Oracion2,Oracion3),determinante(Oracion3,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_no(Oracion,S),leer_padecimiento(S).
 %-----------------------------------------------------------------------%
-
 
 %--------------Analiza la oracion para encontrar calorias---------------%
 %busca si la cantidad de calorias esta definida en el programa

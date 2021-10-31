@@ -20,6 +20,25 @@ actividad:- write("NutriTEC: ¿Cuántas veces a la semana realizas actividad físic
 tipoDieta:- write("NutriTEC: ¿Tienes un tipo de dieta te gustaría realizar?\n").
 despedida:- write("NutriTEC: ¡Con mucho gusto!\n").
 
+%---------Obtener el saludo que el usuario escribe en la oracion---------%
+
+%Obtiene la respuesta del usuario con readln
+obtener_saludo(Saludo):- write("Usuario: "),readln(Entrada), analizar_oracion_saludo(Entrada,Saludo),!.
+
+%analiza la oracion para encontrar el padecimiento
+analizar_oracion_saludo(Entrada,Saludo):- saludo_inicial(Entrada,[Saludo|_]),!. %cut
+analizar_oracion_saludo(Entrada,Saludo):- saludo_inicial(Entrada,Saludo).
+
+%------------Obtener respuesta de en que puede ayudar al usuario--------------%
+
+%Obtiene la respuesta del usuario con readln
+obtener_respuesta_ayuda(Ayuda):- write("Usuario: "),readln(Entrada), analizar_oracion_respuesta_ayuda(Entrada,Ayuda),!. %cut
+
+%analiza la oracion para encontrar el padecimiento
+analizar_oracion_respuesta_ayuda(Entrada,Ayuda):- oracion_ayuda(Entrada,[Ayuda|_]),!. %cut
+analizar_oracion_respuesta_ayuda(Entrada,Ayuda):- oracion_ayuda(Entrada,Ayuda).
+
+
 %---------Obtener el padecimiento que el usuario escribe en la oracion---------%
 
 %Obtiene la respuesta del usuario con readln
@@ -39,7 +58,7 @@ encontrar_numero([_|X],Y):-encontrar_numero(X,Y).
 obtener_cantidad_calorias(Calorias):- write("Usuario: "),readln(Entrada), analizar_oracion_calorias(Entrada,Cantidad_calorias).
 
 %analiza la oracion para encontrar el numero -> cantidad de calorias
-%analizar_oracion_calorias(Entrada,Cantidad_calorias):- oracion(Entrada,[Cantidad_calorias|_]).
+analizar_oracion_calorias(Entrada,Cantidad_calorias):- oracion(Entrada,[Cantidad_calorias|_]).
 analizar_oracion_calorias(Entrada,Cantidad_calorias):- encontrar_numero(Entrada,Cantidad_calorias).
 
 
@@ -53,9 +72,9 @@ obtener_cantidad_actividad_fisica(Dias):- write("Usuario: "),readln(Entrada), an
 analizar_oracion_actividad_fisica(Entrada,Dias):- encontrar_numero(Entrada,Dias).
 
 %------------------Programa------------------%
-iniciar():- %RECIBIR HOLA NUTRITEC
+iniciar():- obtener_saludo(Saludo),
             saludo,
-            %RECIBIR RESPUESTA DEL SALUDO
+            obtener_respuesta_ayuda(Ayuda),
             iniciativa,
             enfermedad,
             obtener_padecimiento(Padecimiento),
