@@ -1,6 +1,6 @@
 %-------------Nivel Principiante-------------%
 
-dieta('Dieta 1',"keto", "NA",'principiante',5,'
+dieta("keto", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   2 huevos revueltos con 30g de jam?n y 30g de queso. \n
 Merienda Media Ma?ana:  100g de zanahoria con aguacate. \n
@@ -11,7 +11,7 @@ Merienda tarde: Rodajas de aguacate con tomate y sal. \n
 Cena: 150g de salm?n al horno. \n
       100g de br?coli. \n').
 
-dieta('Dieta 2',"vegetariana", "NA",'principiante',5,'
+dieta("vegetariana", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio vegetariano.\n
 Desayuno:   1 vaso de leche de soja. \n
             Galletas de avena. \n
@@ -24,7 +24,7 @@ Merienda tarde: Batido de banano con leche de coco y semillas de girasol. \n
 Cena: Coliflor asada con espinacas, almendras y salsa de yogurt. \n
       Ensalada de vegetales frescos con semillas de ayote. \n').
 
-dieta('Dieta 3',"vegana", "NA",'principiante',5,'
+dieta("vegana", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio vegano.\n
 Desayuno:   2 tostadas de pan integral. \n
             1 tomate rallado. \n
@@ -36,7 +36,7 @@ Almuerzo: Ensalada de hongos, espinaca y br?coli. \n
 Merienda tarde: 1 tostada integral con pur? de papa, cebolla y especias. \n
 Cena: Fideos salteados con tofu y soja. \n').
 
-dieta('Dieta 4',"proteica", "NA",'principiante',5,'
+dieta("proteica", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio alto en prote?nas.\n
 Desayuno:   100g de at?n. \n
             3 huevos. \n
@@ -51,7 +51,7 @@ Almuerzo: 300g de bistec de res. \n
 Merienda tarde: 1 taza de fruta. \n
 Cena: 2 quesadillas de pollo. \n').
 
-dieta('Dieta 5',"NA", "NA",'principiante',5,'
+dieta("NA", "NA",'principiante',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   1 vaso de leche descremada. \n
             20g de pan. \n
@@ -71,7 +71,7 @@ Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g d
 
 %-------------Nivel Intermedio-------------%
 
-dieta('Dieta 6',"keto", "NA",'intermedio',1,'
+dieta("keto", "NA",'intermedio',1,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   ? aguacate picado en rodaja.\n
             2 huevos + rebanada de tocino.\n
@@ -89,7 +89,7 @@ Cena: ? Tortilla de bacalao. \n
       1 aguacate en trozos. \n
 ').
 
-dieta('Dieta 7',"vegetariana", "celiaquia",'intermedio',2,'
+dieta("vegetariana", "celiaquia",'intermedio',2,'
 Puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 taza de leche de soya. \n
             Pullado de pipas de girasol. \n
@@ -105,7 +105,7 @@ Cena: Ensalada de alga wakame con s?samo. \n
       ? rebanada de pan integral con pure y aguacate.\n
 ').
 
-dieta('Dieta 8',"vegana", "dislipidemia",'intermedio',3,'
+dieta("vegana", "dislipidemia",'intermedio',3,'
 Puedes empezar con el siguiente plan alimenticio vegano. \n
 Desayuno: 1 smoothie bowl de pi?a y coco con frutos rojos. \n
           1 galleta de avena y manzana. \n
@@ -121,7 +121,7 @@ Cena:  Salteado r?pido de tofu y kale con s?samo. \n
        ? pimiento relleno de soja texturizada. \n
 ').
 
-dieta('Dieta 9',"proteica", "diabetes",'intermedio',4,'
+dieta("proteica", "diabetes",'intermedio',4,'
 Puedes empezar con el siguiente plan alimenticio alto en prote?nas. \n
 Desayuno: 2 huevos revueltos. \n
           2 galletas de trigo con mantequilla de man?. \n
@@ -138,7 +138,7 @@ Cena: ? taza de rodajas de tomate. \n
       Papas salteadas con culantro. \n
 ').
 
-dieta('Dieta 10',"NA", "obesidad",'intermedio',5,'
+dieta("NA", "obesidad",'intermedio',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas. \n
 Desayuno: 2 huevos revueltos con aguacate y tomate. \n
           Manzana en rebanadas. \n
@@ -154,7 +154,7 @@ Cena:  Verduras al horno. \n
 
 %--------------Nivel Avanzado--------------%
 
-dieta('Dieta 11',"keto", "NA",'avanzado',5,'
+dieta("keto", "NA",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   Huevos revueltos con espinacas y salchicha fresca. \n
             2 huevos grandes + 1 cucharada de aceite de coco. \n
@@ -178,7 +178,7 @@ Cena: Solomillo con hongos y vainicas salteadas. \n
       50 gramos vaincas frescas + 2 cucharadas aceite de coco. \n
       Postre: 1 gelatina sin az?car gelatina (120 g). \n').
 
-dieta('Dieta 12',"Vegetariana", "Celiaquia",'avanzado',5,'
+dieta("Vegetariana", "Celiaquia",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   2 tostadas integrales (40g) con una cucharada de aceite de oliva. \n
             1 vaso de batido de soya enriquecida, con una cucharadita de cacao en polvo. \n
@@ -207,7 +207,7 @@ Cena: Crema de Calabaza. \n
       4 rebanadas de 1/4 de pan integral (70g). \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta('Dieta 13',"Vegana", "Dislipidemia",'avanzado',5,'
+dieta("Vegana", "Dislipidemia",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio vegano.\n
 Desayuno:   75g Copos de Avena. \n
             300ml de bebida de soja. \n
@@ -222,7 +222,7 @@ Cena: 100g de arroz basmati con br?coli, cebolla, pimiento, curry. \n
       200g de tofu sazonado con especias al gusto. \n
 Merienda despu?s de la cena: 1 banano. \n').
 
-dieta('Dieta 14',"Proteica", "Diabetes",'avanzado',5,'
+dieta("Proteica", "Diabetes",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio alto en prote?nas.\n
 Desayuno:   Batido de naranja natural. \n
             1 tostada de mermelada. \n
@@ -239,7 +239,7 @@ Cena: 100g Pasta con pechuga de pollo. \n
       Queso fresco. \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta('Dieta 15',"NA", "NA",'avanzado',5,'
+dieta("NA", "NA",'avanzado',5,'
 Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   180g de queso fresco 0%. \n
             100g de avena. \n

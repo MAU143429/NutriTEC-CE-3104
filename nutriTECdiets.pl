@@ -1,31 +1,36 @@
 %-------------Nivel Principiante-------------%
 
-dieta("keto", "NA",'principiante',5,'
-Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
-Desayuno:   2 huevos revueltos con 30g de jam?n y 30g de queso. \n
-Merienda Media Ma?ana:  100g de zanahoria con aguacate. \n
+dieta("keto", "NA",'principiante','
+Le recomendamiendo la dieta keto, esta es para niveles principiantes y para personas sin padecimientos,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
+
+Desayuno:   2 huevos revueltos con 30g de jamon y 30g de queso. \n
+Merienda Media Manana:  100g de zanahoria con aguacate. \n
 Almuerzo: 1 pechuga de pollo a la parrilla con cebolla. \n
           6 tomates cherry. \n
           3 tazas de verduras mixtas y cocidas en aceite de oliva. \n
 Merienda tarde: Rodajas de aguacate con tomate y sal. \n
-Cena: 150g de salm?n al horno. \n
-      100g de br?coli. \n').
+Cena: 150g de salmon al horno. \n
+      100g de brocoli. \n').
 
-dieta("vegetariana", "NA",'principiante',5,'
-Puedes empezar con el siguiente plan alimenticio vegetariano.\n
+dieta("vegetariana", "NA",'principiante','
+Le recomendamiendo la dieta vegetariana, esta es para niveles principiantes y para personas con celiquia,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 vaso de leche de soja. \n
             Galletas de avena. \n
             1 banano. \n
             Almendras. \n
-Merienda Media Ma?ana:  Sandwich de pan integral con tofu, aguacate, tomate y lechuga. \n
+Merienda Media Manana:  Sandwich de pan integral con tofu, aguacate, tomate y lechuga. \n
                         Jugo de naranja. \n
-Almuerzo:Lasa?a vegetariana de verduras . \n
+Almuerzo:Lasana vegetariana de verduras . \n
 Merienda tarde: Batido de banano con leche de coco y semillas de girasol. \n
 Cena: Coliflor asada con espinacas, almendras y salsa de yogurt. \n
       Ensalada de vegetales frescos con semillas de ayote. \n').
 
-dieta("vegana", "NA",'principiante',5,'
-Puedes empezar con el siguiente plan alimenticio vegano.\n
+dieta("vegana", "dislipidemia",'principiante','
+Le recomendamiendo la dieta vegano, esta es para niveles principiantes y para personas con dislipidemia,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegano.\n
+
 Desayuno:   2 tostadas de pan integral. \n
             1 tomate rallado. \n
             Medio aguacate con or?gano. \n
@@ -36,8 +41,9 @@ Almuerzo: Ensalada de hongos, espinaca y br?coli. \n
 Merienda tarde: 1 tostada integral con pur? de papa, cebolla y especias. \n
 Cena: Fideos salteados con tofu y soja. \n').
 
-dieta("proteica", "NA",'principiante',5,'
-Puedes empezar con el siguiente plan alimenticio alto en prote?nas.\n
+dieta("proteica", "NA",'principiante','
+Le recomendamiendo la dieta proteica, esta es para niveles principiantes y para personas con diabetes,\n
+por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
 Desayuno:   100g de at?n. \n
             3 huevos. \n
             1 tomate picado con cebolla. \n
@@ -51,8 +57,9 @@ Almuerzo: 300g de bistec de res. \n
 Merienda tarde: 1 taza de fruta. \n
 Cena: 2 quesadillas de pollo. \n').
 
-dieta("NA", "NA",'principiante',5,'
-Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
+dieta("NA", "obesidad",'principiante','
+Le recomendamiendo esta dieta para niveles principiantes y para personas con obesidad,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   1 vaso de leche descremada. \n
             20g de pan. \n
             Medio banano. \n
@@ -71,8 +78,9 @@ Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g d
 
 %-------------Nivel Intermedio-------------%
 
-dieta("keto", "NA",'intermedio',1,'
-Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
+dieta("keto", "NA",'intermedio','
+Le recomendamiendo la dieta keto, esta es para niveles intermedios y para personas sin padecimientos,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   ? aguacate picado en rodaja.\n
             2 huevos + rebanada de tocino.\n
             Preparar solo rociando aceite en spray (no oliva ni vegetal). \n
@@ -89,8 +97,9 @@ Cena: ? Tortilla de bacalao. \n
       1 aguacate en trozos. \n
 ').
 
-dieta("vegetariana", "celiaquia",'intermedio',2,'
-Puedes empezar con el siguiente plan alimenticio vegetariano. \n
+dieta("vegetariana", "celiaquia",'intermedio','
+Le recomendamiendo la dieta vegetariana, esta es para niveles intermedio y para personas con celiquia,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 taza de leche de soya. \n
             Pullado de pipas de girasol. \n
             Banano en rebanadas. \n
@@ -105,8 +114,9 @@ Cena: Ensalada de alga wakame con s?samo. \n
       ? rebanada de pan integral con pure y aguacate.\n
 ').
 
-dieta("vegana", "dislipidemia",'intermedio',3,'
-Puedes empezar con el siguiente plan alimenticio vegano. \n
+dieta("vegana", "dislipidemia",'intermedio','
+Le recomendamiendo la dieta vegana, esta es para niveles intermedios y para personas con dislipidemia,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegano.\n
 Desayuno: 1 smoothie bowl de pi?a y coco con frutos rojos. \n
           1 galleta de avena y manzana. \n
           ? pieza de frutas fresca. \n
@@ -121,8 +131,9 @@ Cena:  Salteado r?pido de tofu y kale con s?samo. \n
        ? pimiento relleno de soja texturizada. \n
 ').
 
-dieta("proteica", "diabetes",'intermedio',4,'
-Puedes empezar con el siguiente plan alimenticio alto en prote?nas. \n
+dieta("proteica", "diabetes",'intermedio','
+Le recomendamiendo la dieta proteica, esta es para niveles intermedio y para personas con diabetes,\n
+por lo que puedes empezar con el siguiente plan alimenticio alto en proteina.\n
 Desayuno: 2 huevos revueltos. \n
           2 galletas de trigo con mantequilla de man?. \n
           1 taza de caf?. \n
@@ -138,8 +149,9 @@ Cena: ? taza de rodajas de tomate. \n
       Papas salteadas con culantro. \n
 ').
 
-dieta("NA", "obesidad",'intermedio',5,'
-Puedes empezar con el siguiente plan alimenticio bajo en grasas. \n
+dieta("NA", "obesidad",'intermedio','
+Le recomendamiendo la dieta que es para niveles intermedios y para personas con obesidad,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno: 2 huevos revueltos con aguacate y tomate. \n
           Manzana en rebanadas. \n
 Merienda Ma?ana:  ? taza de t? verde. \n
@@ -154,8 +166,9 @@ Cena:  Verduras al horno. \n
 
 %--------------Nivel Avanzado--------------%
 
-dieta("keto", "NA",'avanzado',5,'
-Puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
+dieta("keto", "NA",'avanzado','
+Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas sin padecimientos,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   Huevos revueltos con espinacas y salchicha fresca. \n
             2 huevos grandes + 1 cucharada de aceite de coco. \n
             30g queso mozzarella. \n
@@ -178,8 +191,11 @@ Cena: Solomillo con hongos y vainicas salteadas. \n
       50 gramos vaincas frescas + 2 cucharadas aceite de coco. \n
       Postre: 1 gelatina sin az?car gelatina (120 g). \n').
 
-dieta("Vegetariana", "Celiaquia",'avanzado',5,'
-Puedes empezar con el siguiente plan alimenticio vegetariano. \n
+dieta("vegetariana", "celiaquia",'avanzado','
+Le recomendamiendo la dieta vegetariana, esta es para niveles avanzados y para personas con celiaquia ,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegetariano.\n
+Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas con celiquia,\n
+por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   2 tostadas integrales (40g) con una cucharada de aceite de oliva. \n
             1 vaso de batido de soya enriquecida, con una cucharadita de cacao en polvo. \n
             2 porciones de fruta. \n
@@ -207,8 +223,9 @@ Cena: Crema de Calabaza. \n
       4 rebanadas de 1/4 de pan integral (70g). \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta("Vegana", "Dislipidemia",'avanzado',5,'
-Puedes empezar con el siguiente plan alimenticio vegano.\n
+dieta("vegana", "dislipidemia",'avanzado','
+Le recomendamiendo la dieta vegana, esta es para niveles avanzados y para personas con dislipidemia,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo vegano.\n
 Desayuno:   75g Copos de Avena. \n
             300ml de bebida de soja. \n
             Una manzana , o frutos rojos , fresas ?. (o mix de frutas). \n
@@ -222,8 +239,9 @@ Cena: 100g de arroz basmati con br?coli, cebolla, pimiento, curry. \n
       200g de tofu sazonado con especias al gusto. \n
 Merienda despu?s de la cena: 1 banano. \n').
 
-dieta("Proteica", "Diabetes",'avanzado',5,'
-Puedes empezar con el siguiente plan alimenticio alto en prote?nas.\n
+dieta("proteica", "diabetes",'avanzado','
+Le recomendamiendo la dieta proteica, esta es para niveles avanzados y para personas con diabetes,\n
+por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
 Desayuno:   Batido de naranja natural. \n
             1 tostada de mermelada. \n
 Merienda Media Ma?ana:  S?ndwich de jam?n y queso. \n
@@ -239,8 +257,9 @@ Cena: 100g Pasta con pechuga de pollo. \n
       Queso fresco. \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta("NA", "NA",'avanzado',5,'
-Puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
+dieta("NA", "obesidad",'avanzado','
+Le recomendamiendo una dieta para niveles avanzados y para personas sin padecimientos,\n
+por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   180g de queso fresco 0%. \n
             100g de avena. \n
             1 vaso de leche semi descremada. \n
