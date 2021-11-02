@@ -75,11 +75,11 @@ analizar_oracion_actividad_fisica(Entrada,Dias):- encontrar_numero(Entrada,Dias)
 %---------Obtener el tipo de dieta que el usuario escribe en la oracion---------%
 
 %Obtiene la respuesta del usuario con readln
-obtener_tipo_dieta(Dieta):- write("Usuario: "),readln(Entrada), analizar_oracion_tipo_dieta(Entrada,Dieta),!.
+obtener_tipo_dieta(Tipo_Dieta):- write("Usuario: "),readln(Entrada), analizar_oracion_tipo_dieta(Entrada,Tipo_Dieta),!.
 
 %analiza la oracion para encontrar el tipo de dieta que quiere
-analizar_oracion_tipo_dieta(Entrada,Dieta):- oracion(Entrada,[Dieta|_]),!.
-analizar_oracion_tipo_dieta(Entrada,Dieta):- oracion(Entrada,Dieta).
+analizar_oracion_tipo_dieta(Entrada,Tipo_Dieta):- oracion(Entrada,[Tipo_Dieta|_]),!.
+analizar_oracion_tipo_dieta(Entrada,Tipo_Dieta):- oracion(Entrada,Tipo_Dieta).
 
 
 %---------Obtener la despedida que el usuario escribe en la oracion---------%
@@ -91,11 +91,22 @@ obtener_despedida(Despedida):- write("Usuario: "),readln(Entrada), analizar_orac
 analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,[Despedida|_]),!. %cut
 analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,Despedida).
 
-%------------------Programa------------------%
-iniciar():- obtener_saludo(Saludo),saludo,
-            obtener_respuesta_ayuda(Ayuda),iniciativa,
-            enfermedad,obtener_padecimiento(Padecimiento),
-            calorias,obtener_cantidad_calorias(Calorias),
-            actividad,obtener_cantidad_actividad_fisica(Dias),
-            tipoDieta,obtener_tipo_dieta(Dieta),%LE ASIGNA LA DIETA
-            obtener_despedida(Despedida),despedida.
+%------------------------Asigna la dieta----------------------%
+asignar_dieta(Padecimiento, Dias, Calorias, Tipo_Dieta):- padecimiento(Padecimiento_elegido,Padecimiento_asociado), buscarNivel(Nivel, Dias), calorias(Calorias,Nivel),dieta(Tipo_dieta, Padecimiento_asociado, Nivel, Texto_Dieta))
+
+% Busca en el nivel en el que se encuentra el usuario
+buscarNivel(Nivel,Cantidad_Dias):- nivel(Nivel,Cantidades), miembro(Cantidad, Cantidades).
+miembro(X,[X|_]).
+miembro(X,[_|Y]):- miembro(X,Y).
+
+
+%--------------------------Programa---------------------------%
+nutriTEC:- obtener_saludo(Saludo),saludo,
+           obtener_respuesta_ayuda(Ayuda),iniciativa,
+           enfermedad,obtener_padecimiento(Padecimiento_elegido),
+           calorias,obtener_cantidad_calorias(Calorias),
+           actividad,obtener_cantidad_actividad_fisica(Dias),
+           tipoDieta,obtener_tipo_dieta(Tipo_Dieta),
+           asignar_dieta(Padecimiento_elegido, Dias, Calorias, Tipo_Dieta)
+           
+           obtener_despedida(Despedida),despedida.

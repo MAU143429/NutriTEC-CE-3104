@@ -128,14 +128,10 @@ calorias(3000,avanzado).
 
 
 %------------Niveles de actividad fisica-------------%
-nivel(0,'principiante').
-nivel(1,'principiante').
-nivel(2,'principiante').
-nivel(3,'intermedio').
-nivel(4,'intermedio').
-nivel(5,'avanzado').
-nivel(6,'avanzado').
-nivel(7,'avanzado').
+
+nivel('principiante',["0","1","2"]).
+nivel('intermedio',["3","4"]).
+nivel('avanzado',["5","6","7"]).
 
 %---------------------Sintagmas----------------------%
 
@@ -256,6 +252,7 @@ oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_tipo_dieta(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_tipo_dieta(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,Oracion2),palabra_dieta(Oracion2,S),leer_tipo_dieta(S).
 oracion(Oracion,S):-respuesta_no(Oracion,S),leer_tipo_dieta(S).
 
 
