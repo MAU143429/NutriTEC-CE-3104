@@ -125,13 +125,29 @@ calorias(2800,avanzado).
 calorias(2900,avanzado).
 calorias(3000,avanzado).
 
+%---------------Niveles por calorias------------------%
+nivel_calorias('principiante',["1000","1100","1200","1300","1400","1500"]).
+nivel_calorias('intermedio',["1600","1700","1800","1900","2000","2100","2200","2300","2400"]).
+nivel_calorias('avanzado',["2500","2600","2700","2800","2900","3000"]).
 
-
-%------------Niveles de actividad fisica-------------%
+%------------Niveles por actividad fisica-------------%
 
 nivel('principiante',["0","1","2"]).
 nivel('intermedio',["3","4"]).
 nivel('avanzado',["5","6","7"]).
+
+%-------relacion de la dieta con el padecimiento------%
+relacion_dieta_padecimiento('keto',no).
+relacion_dieta_padecimiento('keto',ninguno).
+relacion_dieta_padecimiento('proteica',diabetes).
+relacion_dieta_padecimiento('vegetariana',celiaquia).
+relacion_dieta_padecimiento('vegetariana',celiaco).
+relacion_dieta_padecimiento('vegetariana',celiaca).
+relacion_dieta_padecimiento('vegana',dislipidemia).
+relacion_dieta_padecimiento('vegana',hiperlipidemia).
+relacion_dieta_padecimiento('NA',obesidad).
+relacion_dieta_padecimiento('NA',gordo).
+relacion_dieta_padecimiento('NA',gorda).
 
 %---------------------Sintagmas----------------------%
 
@@ -225,7 +241,7 @@ oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_nominal(Oracion1,Ora
 oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_nominal(Oracion1,Oracion2),sintagma_verbal(Oracion2,Oracion3),determinante(Oracion3,S),leer_padecimiento(S).
 oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,S),leer_padecimiento(S).
 oracion(Oracion,S):-respuesta_si(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_padecimiento(S).
-oracion(Oracion,S):-respuesta_no(Oracion,S),leer_padecimiento(S).
+oracion(Oracion,S):-respuesta_no(S).
 %-----------------------------------------------------------------------%
 
 %--------------Analiza la oracion para encontrar calorias---------------%
@@ -238,6 +254,8 @@ oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,
 oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,S),leer_cantidad_calorias(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_cantidad_calorias(S).
+oracion(Oracion,S):-respuesta_no(S).
+
 %-----------------------------------------------------------------------%
 
 %------------Analiza la oracion para encontrar tipo de dieta------------%
@@ -253,7 +271,8 @@ oracion(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,
 oracion(Oracion,S):-sintagma_verbal(Oracion,S),leer_tipo_dieta(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,S),leer_tipo_dieta(S).
 oracion(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,Oracion2),palabra_dieta(Oracion2,S),leer_tipo_dieta(S).
-oracion(Oracion,S):-respuesta_no(Oracion,S),leer_tipo_dieta(S).
+oracion(Oracion,S):-respuesta_no(S).
+oracion(Oracion,S):-leer_tipo_dieta(S).
 
 
 

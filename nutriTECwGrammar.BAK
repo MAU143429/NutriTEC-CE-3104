@@ -8,8 +8,9 @@
 */
 
 %----------------Importar archivos----------------%
- :- consult(nutriGrammar).
- :- consult(nutriTECdiets).
+:- consult(nutriGrammar).
+:- consult(nutriTECdiets).
+% :- [nutriGrammar, nutriTECdiets].
 
 %-----------Mensajes predeterminados---------%
 saludo:- write("NutriTEC: ¡Hola, encantado de ver que deseas mejorar tu estilo de vida! ¿En qué te puedo ayudar? \n").
@@ -91,13 +92,23 @@ obtener_despedida(Despedida):- write("Usuario: "),readln(Entrada), analizar_orac
 analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,[Despedida|_]),!. %cut
 analizar_oracion_despedida(Entrada,Despedida):- despedida_final(Entrada,Despedida).
 
-%------------------------Asigna la dieta----------------------%
-asignar_dieta(Padecimiento, Dias, Calorias, Tipo_Dieta):- padecimiento(Padecimiento_elegido,Padecimiento_asociado), buscarNivel(Nivel, Dias), calorias(Calorias,Nivel),dieta(Tipo_dieta, Padecimiento_asociado, Nivel, Texto_Dieta))
-
-% Busca en el nivel en el que se encuentra el usuario
-buscarNivel(Nivel,Cantidad_Dias):- nivel(Nivel,Cantidades), miembro(Cantidad, Cantidades).
+%funcion miembro de una lista
 miembro(X,[X|_]).
 miembro(X,[_|Y]):- miembro(X,Y).
+
+% Busca en el nivel en el que se encuentra el usuario
+buscarNivel(Nivel,Cantidad):- nivel(Nivel,Cantidades), miembro(Cantidad, Cantidades).
+
+% Busca en el nivel en el que se encuentra el usuario
+buscarCalorias(Nivel,Calorias):- nivel_calorias(Nivel,Cantidades), miembro(Calorias, Cantidades).
+
+% Busca en el nivel en el que se encuentra el usuario
+clasificar_dieta(Dieta,Padecimiento):- relacion_dieta_padecimiento(Dieta,Padecimientos), miembro(Padecimiento, Padecimientos).
+
+
+%------------------------Asigna la dieta----------------------%
+asignar_dieta(Padecimiento_elegido, Dias, Calorias):- padecimiento(Padecimiento_elegido,Padecimiento_asociado), buscarNivel(Nivel, Dias), buscarCalorias(Nivel, Calorias), clasificar_dieta(Dieta,Padecimiento), dieta(Dieta, Padecimiento_asociado, Nivel, Texto_Dieta), write(Texto_Dieta),!.
+
 
 
 %--------------------------Programa---------------------------%
@@ -107,29 +118,6 @@ nutriTEC:- obtener_saludo(Saludo),saludo,
            calorias,obtener_cantidad_calorias(Calorias),
            actividad,obtener_cantidad_actividad_fisica(Dias),
            tipoDieta,obtener_tipo_dieta(Tipo_Dieta),
-           asignar_dieta(Padecimiento_elegido, Dias, Calorias, Tipo_Dieta)
+           
+           asignar_dieta(Padecimiento_elegido, Dias, Calorias),
            obtener_despedida(Despedida),despedida.
-
-
-
-mrTrainer:- bienvenida,
-            pregunta_ejercicio(Ejercicio),
-            write("Mr Trainer: Me parece muy buena su iniciativa"),nl,
-            pregunta_frecuencia_realiza_AF(Frecuencia),
-            pregunta_padecimiento(Padecimiento),
-            pregunta_dias_descanso(DiasDescanso),
-            consulta(Ejercicio,Padecimiento,DiasDescanso,Nivel,Rutina),
-            write(Nivel),nl,write(Rutina),nl,nl,
-            despedida_del_usuario(Despedida).
-
-%ver el nivel segun los dias de descanso
-vernivel(Niv,Dias):-nivel(Niv,D1,D2),D1=<Dias,D2>=Dias,!.
-
-% consulta. En esta regla se verifica que tanto el deporte como el
-% padecimiento se encuentren en la BD, la idea es retornar el nivel y la
-% rutina del usuario.
-consulta(Depo,Pade,Dias,Nivel,Rutina):-deporte(Depo,Pd), padecimiento(Pade,Pp),rutina(Pd,Pp,Dias,Rutina),vernivel(Nivel,Dias),!.
-
-%dieta(numero de dieta, tipo de dieta preferida, padecimiento, nivel, dias actividad fisica,
-%     texto de la dieta)
-%consulta(Ejercicio,Padecimiento,DiasDescanso,Nivel,Rutina)

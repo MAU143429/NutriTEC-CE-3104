@@ -13,7 +13,7 @@ Merienda tarde: Rodajas de aguacate con tomate y sal. \n
 Cena: 150g de salmon al horno. \n
       100g de brocoli. \n').
 
-dieta("vegetariana", "NA",'principiante','
+dieta("vegetariana", "celiaquia",'principiante','
 Le recomendamiendo la dieta vegetariana, esta es para niveles principiantes y para personas con celiquia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 vaso de leche de soja. \n
@@ -41,7 +41,7 @@ Almuerzo: Ensalada de hongos, espinaca y br?coli. \n
 Merienda tarde: 1 tostada integral con pur? de papa, cebolla y especias. \n
 Cena: Fideos salteados con tofu y soja. \n').
 
-dieta("proteica", "NA",'principiante','
+dieta("proteica", "diabetes",'principiante','
 Le recomendamiendo la dieta proteica, esta es para niveles principiantes y para personas con diabetes,\n
 por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
 Desayuno:   100g de at?n. \n
