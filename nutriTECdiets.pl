@@ -1,7 +1,7 @@
 %-------------Nivel Principiante-------------%
 
-dieta("keto", "NA",'principiante','
-Le recomendamiendo la dieta keto, esta es para niveles principiantes y para personas sin padecimientos,\n
+dieta("keto", "obesidad",'principiante','
+Le recomendamiendo la dieta keto, esta es para niveles principiantes y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 
 Desayuno:   2 huevos revueltos con 30g de jamon y 30g de queso. \n
@@ -57,8 +57,8 @@ Almuerzo: 300g de bistec de res. \n
 Merienda tarde: 1 taza de fruta. \n
 Cena: 2 quesadillas de pollo. \n').
 
-dieta("NA", "obesidad",'principiante','
-Le recomendamiendo esta dieta para niveles principiantes y para personas con obesidad,\n
+dieta("NA", "NA",'principiante','
+Le recomendamiendo esta dieta para niveles principiantes y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   1 vaso de leche descremada. \n
             20g de pan. \n
@@ -78,8 +78,8 @@ Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g d
 
 %-------------Nivel Intermedio-------------%
 
-dieta("keto", "NA",'intermedio','
-Le recomendamiendo la dieta keto, esta es para niveles intermedios y para personas sin padecimientos,\n
+dieta("keto", "obesidad",'intermedio','
+Le recomendamiendo la dieta keto, esta es para niveles intermedios y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   ? aguacate picado en rodaja.\n
             2 huevos + rebanada de tocino.\n
@@ -149,8 +149,8 @@ Cena: ? taza de rodajas de tomate. \n
       Papas salteadas con culantro. \n
 ').
 
-dieta("NA", "obesidad",'intermedio','
-Le recomendamiendo la dieta que es para niveles intermedios y para personas con obesidad,\n
+dieta("NA", "NA",'intermedio','
+Le recomendamiendo la dieta que es para niveles intermedios y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno: 2 huevos revueltos con aguacate y tomate. \n
           Manzana en rebanadas. \n
@@ -166,8 +166,8 @@ Cena:  Verduras al horno. \n
 
 %--------------Nivel Avanzado--------------%
 
-dieta("keto", "NA",'avanzado','
-Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas sin padecimientos,\n
+dieta("keto", "obesidad",'avanzado','
+Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   Huevos revueltos con espinacas y salchicha fresca. \n
             2 huevos grandes + 1 cucharada de aceite de coco. \n
@@ -257,7 +257,7 @@ Cena: 100g Pasta con pechuga de pollo. \n
       Queso fresco. \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta("NA", "obesidad",'avanzado','
+dieta("NA", "NA",'avanzado','
 Le recomendamiendo una dieta para niveles avanzados y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   180g de queso fresco 0%. \n
