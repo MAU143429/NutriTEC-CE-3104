@@ -1,7 +1,17 @@
+/** ---------- Tarea 2 NutriTEC CE-3104 ----------
+
+                    Gabriel Vargas
+                    Yendry Badilla
+                   Mauricio Calderon
+
+    ----------                          ----------
+*/
+
 %-----------Gramaticas de clausulas definidas---------%
 
 
 %--------------------Determinantes--------------------%
+
 % determinantes definidos
 determinante([el|S],S).
 determinante([la|S],S).
