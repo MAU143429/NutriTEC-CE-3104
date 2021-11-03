@@ -33,6 +33,7 @@ saludo([noches|S],S).
 % infinitivos se toman como verbos
 
 verbo([deseo|S],S).
+verbo([soy|S],S).
 verbo([diagnosticado|S],S).
 verbo([llevar|S],S).
 verbo([han|S],S).
@@ -79,19 +80,20 @@ preposicion([son|S],S).
 preposicion([sobre|S],S).
 
 %-------------------Padecimientos--------------------%
-padecimiento(diabetes,'diabetes').
-padecimiento(dislipidemia,'dislipidemia').
-padecimiento(hiperlipidemia,'dislipidemia').
-padecimiento(hipercolesterolemia,'dislipidemia').
-padecimiento(obesidad,'obesidad').
-padecimiento(gordura,'obesidad').
-padecimiento(gordo,'obesidad').
-padecimiento(gorda,'obesidad').
-padecimiento(celiaquia,'celiaquia').
-padecimiento(celiaco,'celiaquia').
-padecimiento(celiaca,'celiaquia').
-padecimiento(ninguno,'NA').
-padecimiento(no,'NA').
+padecimiento(diabetes,diabetes).
+padecimiento(dislipidemia,dislipidemia).
+padecimiento(hiperlipidemia,dislipidemia).
+padecimiento(hipercolesterolemia,dislipidemia).
+padecimiento(obesidad,obesidad).
+padecimiento(sobrepeso,obesidad).
+padecimiento(gordura,obesidad).
+padecimiento(gordo,obesidad).
+padecimiento(gorda,obesidad).
+padecimiento(celiaquia,celiaquia).
+padecimiento(celiaco,celiaquia).
+padecimiento(celiaca,celiaquia).
+padecimiento(ninguno,no).
+padecimiento(no,no).
 
 %-------------------Dietas--------------------%
 tipo_dieta(keto,p1).
@@ -141,7 +143,7 @@ relacion_dieta_padecimiento([no,ninguno],'no').
 relacion_dieta_padecimiento([diabetes],'proteica').
 relacion_dieta_padecimiento([celiaquia,celiaco,celiaca],'vegetariana').
 relacion_dieta_padecimiento([dislipidemia,hiperlipidemia,hipercolesterolemia],'vegana').
-relacion_dieta_padecimiento([obesidad,gordo,gorda],'keto').
+relacion_dieta_padecimiento([obesidad,gordo,gorda,sobrepeso],'keto').
 
 %---------------------Sintagmas----------------------%
 
@@ -193,10 +195,13 @@ ayuda([gorda|S],S).
 ayuda([celiaquia|S],S).
 ayuda([celiaco|S],S).
 ayuda([celiaca|S],S).
+ayuda([celiaca|S],S).
+ayuda([gracias|S],S).
 
 %------------Analiza la oracion para leer en que ayuda al usuario-------------%
 
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),preposicion(Oracion2,S).
+oracion_ayuda(Oracion,S):-ayuda(Oracion,S).
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion5,Oracion6),ayuda(Oracion6,Oracion7),ayuda(Oracion7,S).
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),pronombre(Oracion3,Oracion4),ayuda(Oracion4,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),preposicion(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),ayuda(Oracion3,S).
@@ -206,6 +211,9 @@ oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oraci
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),preposicion(Oracion2,Oracion3),sintagma_verbal(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),determinante(Oracion6,Oracion7),ayuda(Oracion7,Oracion8),ayuda(Oracion8,S).
 oracion_ayuda(Oracion,S):-sintagma_nominal(Oracion,Oracion1),sintagma_verbal(Oracion1,Oracion2),determinante(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),ayuda(Oracion5,Oracion6),ayuda(Oracion6,S).
 oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),determinante(Oracion1,Oracion2),ayuda(Oracion2,Oracion3),preposicion(Oracion3,Oracion4),ayuda(Oracion4,Oracion5),ayuda(Oracion5,S).
+oracion_ayuda(Oracion,S):-sintagma_verbal(Oracion,Oracion1),ayuda(Oracion1,Oracion2),sintagma_verbal(Oracion2,Oracion3),ayuda(Oracion3,Oracion4),preposicion(Oracion4,Oracion5),sintagma_verbal(Oracion5,Oracion6),preposicion(Oracion6,Oracion7),determinante(Oracion7,Oracion8),ayuda(Oracion8,Oracion9),ayuda(Oracion9,S).
+
+
 %-----------------------------------------------------------------------%
 
 %----------------Responde con no----------------%
