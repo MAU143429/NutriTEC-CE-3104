@@ -79,19 +79,19 @@ preposicion([son|S],S).
 preposicion([sobre|S],S).
 
 %-------------------Padecimientos--------------------%
-padecimiento(diabetes,p1).
-padecimiento(dislipidemia,p2).
-padecimiento(hiperlipidemia,p2).
-padecimiento(hipercolesterolemia,p2).
-padecimiento(obesidad,p3).
-padecimiento(gordura,p3).
-padecimiento(gordo,p3).
-padecimiento(gorda,p3).
-padecimiento(celiaquia,p4).
-padecimiento(celiaco,p4).
-padecimiento(celiaca,p4).
-padecimiento(ninguno,p5).
-padecimiento(no,p5).
+padecimiento(diabetes,'diabetes').
+padecimiento(dislipidemia,'dislipidemia').
+padecimiento(hiperlipidemia,'dislipidemia').
+padecimiento(hipercolesterolemia,'dislipidemia').
+padecimiento(obesidad,'obesidad').
+padecimiento(gordura,'obesidad').
+padecimiento(gordo,'obesidad').
+padecimiento(gorda,'obesidad').
+padecimiento(celiaquia,'celiaquia').
+padecimiento(celiaco,'celiaquia').
+padecimiento(celiaca,'celiaquia').
+padecimiento(ninguno,'NA').
+padecimiento(no,'NA').
 
 %-------------------Dietas--------------------%
 tipo_dieta(keto,p1).
@@ -126,28 +126,22 @@ calorias(2900,avanzado).
 calorias(3000,avanzado).
 
 %---------------Niveles por calorias------------------%
-nivel_calorias('principiante',["1000","1100","1200","1300","1400","1500"]).
-nivel_calorias('intermedio',["1600","1700","1800","1900","2000","2100","2200","2300","2400"]).
-nivel_calorias('avanzado',["2500","2600","2700","2800","2900","3000"]).
+nivel_calorias('principiante',[1000,1100,1200,1300,1400,1500]).
+nivel_calorias('intermedio',[1600,1700,1800,1900,2000,2100,2200,2300,2400]).
+nivel_calorias('avanzado',[2500,2600,2700,2800,2900,3000]).
 
 %------------Niveles por actividad fisica-------------%
 
-nivel('principiante',["0","1","2"]).
-nivel('intermedio',["3","4"]).
-nivel('avanzado',["5","6","7"]).
+nivel('principiante',[0,1,2]).
+nivel('intermedio',[3,4]).
+nivel('avanzado',[5,6,7]).
 
 %-------relacion de la dieta con el padecimiento------%
-relacion_dieta_padecimiento('keto',no).
-relacion_dieta_padecimiento('keto',ninguno).
-relacion_dieta_padecimiento('proteica',diabetes).
-relacion_dieta_padecimiento('vegetariana',celiaquia).
-relacion_dieta_padecimiento('vegetariana',celiaco).
-relacion_dieta_padecimiento('vegetariana',celiaca).
-relacion_dieta_padecimiento('vegana',dislipidemia).
-relacion_dieta_padecimiento('vegana',hiperlipidemia).
-relacion_dieta_padecimiento('NA',obesidad).
-relacion_dieta_padecimiento('NA',gordo).
-relacion_dieta_padecimiento('NA',gorda).
+relacion_dieta_padecimiento([no,ninguno],'NA').
+relacion_dieta_padecimiento([diabetes],'proteica').
+relacion_dieta_padecimiento([celiaquia,celiaco,celiaca],'vegetariana').
+relacion_dieta_padecimiento([dislipidemia,hiperlipidemia,hipercolesterolemia],'vegana').
+relacion_dieta_padecimiento([obesidad,gordo,gorda],'keto').
 
 %---------------------Sintagmas----------------------%
 

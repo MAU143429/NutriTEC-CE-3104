@@ -103,12 +103,11 @@ buscarNivel(Nivel,Cantidad):- nivel(Nivel,Cantidades), miembro(Cantidad, Cantida
 buscarCalorias(Nivel,Calorias):- nivel_calorias(Nivel,Cantidades), miembro(Calorias, Cantidades).
 
 % Busca en el nivel en el que se encuentra el usuario
-clasificar_dieta(Dieta,Padecimiento):- relacion_dieta_padecimiento(Dieta,Padecimientos), miembro(Padecimiento, Padecimientos).
+clasificar_dieta(Padecimiento, Dieta):- relacion_dieta_padecimiento(Padecimientos,Dieta), miembro(Padecimiento, Padecimientos).
 
 
 %------------------------Asigna la dieta----------------------%
-asignar_dieta(Padecimiento_elegido, Dias, Calorias):- padecimiento(Padecimiento_elegido,Padecimiento_asociado), buscarNivel(Nivel, Dias), buscarCalorias(Nivel, Calorias), clasificar_dieta(Dieta,Padecimiento), dieta(Dieta, Padecimiento_asociado, Nivel, Texto_Dieta), write(Texto_Dieta),!.
-
+asignar_dieta(Padecimiento_elegido, Dias, Calorias):- padecimiento(Padecimiento_elegido,Padecimiento_asociado), buscarNivel(Nivel, Dias), buscarCalorias(Nivel, Calorias), clasificar_dieta(Padecimiento_elegido,Dieta), dieta(Dieta, Padecimiento_elegido, Nivel, Texto_Dieta), write(Texto_Dieta),!.
 
 
 %--------------------------Programa---------------------------%

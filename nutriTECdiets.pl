@@ -1,6 +1,6 @@
 %-------------Nivel Principiante-------------%
 
-dieta("keto", "obesidad",'principiante','
+dieta(keto, obesidad,'principiante','
 Le recomendamiendo la dieta keto, esta es para niveles principiantes y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 
@@ -13,7 +13,7 @@ Merienda tarde: Rodajas de aguacate con tomate y sal. \n
 Cena: 150g de salmon al horno. \n
       100g de brocoli. \n').
 
-dieta("vegetariana", "celiaquia",'principiante','
+dieta(vegetariana, celiaquia,'principiante','
 Le recomendamiendo la dieta vegetariana, esta es para niveles principiantes y para personas con celiquia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 vaso de leche de soja. \n
