@@ -13,7 +13,7 @@ Merienda tarde: Rodajas de aguacate con tomate y sal. \n
 Cena: 150g de salmon al horno. \n
       100g de brocoli. \n').
 
-dieta('vegetariana', 'celiaquia','principiante','
+dieta(vegetariana, celiaquia,'principiante','
 Le recomendamiendo la dieta vegetariana, esta es para niveles principiantes y para personas con celiquia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 vaso de leche de soja. \n
@@ -27,7 +27,7 @@ Merienda tarde: Batido de banano con leche de coco y semillas de girasol. \n
 Cena: Coliflor asada con espinacas, almendras y salsa de yogurt. \n
       Ensalada de vegetales frescos con semillas de ayote. \n').
 
-dieta("vegana", "dislipidemia",'principiante','
+dieta(vegana, dislipidemia,'principiante','
 Le recomendamiendo la dieta vegano, esta es para niveles principiantes y para personas con dislipidemia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegano.\n
 
@@ -41,7 +41,7 @@ Almuerzo: Ensalada de hongos, espinaca y br?coli. \n
 Merienda tarde: 1 tostada integral con pur? de papa, cebolla y especias. \n
 Cena: Fideos salteados con tofu y soja. \n').
 
-dieta("proteica", "diabetes",'principiante','
+dieta(proteica, diabetes",'principiante','
 Le recomendamiendo la dieta proteica, esta es para niveles principiantes y para personas con diabetes,\n
 por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
 Desayuno:   100g de at?n. \n
@@ -78,7 +78,7 @@ Cena: Sopa de verduras (75 g de repollo, 25 g de zanahoria, 50 g de nabo, 50 g d
 
 %-------------Nivel Intermedio-------------%
 
-dieta("keto", "obesidad",'intermedio','
+dieta(keto, obesidad,'intermedio','
 Le recomendamiendo la dieta keto, esta es para niveles intermedios y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   ? aguacate picado en rodaja.\n
@@ -97,7 +97,7 @@ Cena: ? Tortilla de bacalao. \n
       1 aguacate en trozos. \n
 ').
 
-dieta("vegetariana", "celiaquia",'intermedio','
+dieta(vegetariana, celiaquia,'intermedio','
 Le recomendamiendo la dieta vegetariana, esta es para niveles intermedio y para personas con celiquia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   1 taza de leche de soya. \n
@@ -114,7 +114,7 @@ Cena: Ensalada de alga wakame con s?samo. \n
       ? rebanada de pan integral con pure y aguacate.\n
 ').
 
-dieta("vegana", "dislipidemia",'intermedio','
+dieta(vegana, dislipidemia,'intermedio','
 Le recomendamiendo la dieta vegana, esta es para niveles intermedios y para personas con dislipidemia,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegano.\n
 Desayuno: 1 smoothie bowl de pi?a y coco con frutos rojos. \n
@@ -131,7 +131,7 @@ Cena:  Salteado r?pido de tofu y kale con s?samo. \n
        ? pimiento relleno de soja texturizada. \n
 ').
 
-dieta("proteica", "diabetes",'intermedio','
+dieta(proteica, diabetes,'intermedio','
 Le recomendamiendo la dieta proteica, esta es para niveles intermedio y para personas con diabetes,\n
 por lo que puedes empezar con el siguiente plan alimenticio alto en proteina.\n
 Desayuno: 2 huevos revueltos. \n
@@ -166,7 +166,7 @@ Cena:  Verduras al horno. \n
 
 %--------------Nivel Avanzado--------------%
 
-dieta("keto", "obesidad",'avanzado','
+dieta(keto, obesidad,'avanzado','
 Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas con obesidad,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en carbohidratos.\n
 Desayuno:   Huevos revueltos con espinacas y salchicha fresca. \n
@@ -191,7 +191,7 @@ Cena: Solomillo con hongos y vainicas salteadas. \n
       50 gramos vaincas frescas + 2 cucharadas aceite de coco. \n
       Postre: 1 gelatina sin az?car gelatina (120 g). \n').
 
-dieta("vegetariana", "celiaquia",'avanzado','
+dieta(vegetariana, celiaquia,'avanzado','
 Le recomendamiendo la dieta vegetariana, esta es para niveles avanzados y para personas con celiaquia ,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano.\n
 Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas con celiquia,\n
@@ -223,7 +223,7 @@ Cena: Crema de Calabaza. \n
       4 rebanadas de 1/4 de pan integral (70g). \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta("vegana", "dislipidemia",'avanzado','
+dieta(vegana, dislipidemia,'avanzado','
 Le recomendamiendo la dieta vegana, esta es para niveles avanzados y para personas con dislipidemia,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo vegano.\n
 Desayuno:   75g Copos de Avena. \n
@@ -239,7 +239,7 @@ Cena: 100g de arroz basmati con br?coli, cebolla, pimiento, curry. \n
       200g de tofu sazonado con especias al gusto. \n
 Merienda despu?s de la cena: 1 banano. \n').
 
-dieta("proteica", "diabetes",'avanzado','
+dieta(proteica, diabetes,'avanzado','
 Le recomendamiendo la dieta proteica, esta es para niveles avanzados y para personas con diabetes,\n
 por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
 Desayuno:   Batido de naranja natural. \n
