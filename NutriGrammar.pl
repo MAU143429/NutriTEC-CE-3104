@@ -137,7 +137,7 @@ nivel('intermedio',[3,4]).
 nivel('avanzado',[5,6,7]).
 
 %-------relacion de la dieta con el padecimiento------%
-relacion_dieta_padecimiento([no,ninguno],'NA').
+relacion_dieta_padecimiento([no,ninguno],'no').
 relacion_dieta_padecimiento([diabetes],'proteica').
 relacion_dieta_padecimiento([celiaquia,celiaco,celiaca],'vegetariana').
 relacion_dieta_padecimiento([dislipidemia,hiperlipidemia,hipercolesterolemia],'vegana').

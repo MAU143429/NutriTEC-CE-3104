@@ -33,21 +33,21 @@ por lo que puedes empezar con el siguiente plan alimenticio vegano.\n
 
 Desayuno:   2 tostadas de pan integral. \n
             1 tomate rallado. \n
-            Medio aguacate con or?gano. \n
+            Medio aguacate con orégano. \n
             Semillas ch?a. \n
-Merienda Media Ma?ana:  Jugo de naranja con zanahoria. \n
+Merienda Media Mañana:  Jugo de naranja con zanahoria. \n
 Almuerzo: Ensalada de hongos, espinaca y br?coli. \n
           Arroz con alcachofas. \n
-Merienda tarde: 1 tostada integral con pur? de papa, cebolla y especias. \n
+Merienda tarde: 1 tostada integral con puré de papa, cebolla y especias. \n
 Cena: Fideos salteados con tofu y soja. \n').
 
-dieta(proteica, diabetes",'principiante','
+dieta(proteica, diabetes,'principiante','
 Le recomendamiendo la dieta proteica, esta es para niveles principiantes y para personas con diabetes,\n
 por lo que puedes empezar con el siguiente plan alimenticio alto en proteinas.\n
-Desayuno:   100g de at?n. \n
+Desayuno:   100g de atún. \n
             3 huevos. \n
             1 tomate picado con cebolla. \n
-Merienda Media Ma?ana:  1 yogurt griego. \n
+Merienda Media Mañana:  1 yogurt griego. \n
                         15 almendras. \n
 Almuerzo: 300g de bistec de res. \n
           1 taza de br?coli. \n
@@ -57,7 +57,7 @@ Almuerzo: 300g de bistec de res. \n
 Merienda tarde: 1 taza de fruta. \n
 Cena: 2 quesadillas de pollo. \n').
 
-dieta("NA", "NA",'principiante','
+dieta(no, no,'principiante','
 Le recomendamiendo esta dieta para niveles principiantes y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   1 vaso de leche descremada. \n
@@ -149,7 +149,7 @@ Cena: ? taza de rodajas de tomate. \n
       Papas salteadas con culantro. \n
 ').
 
-dieta("NA", "NA",'intermedio','
+dieta(no, no,'intermedio','
 Le recomendamiendo la dieta que es para niveles intermedios y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno: 2 huevos revueltos con aguacate y tomate. \n
@@ -257,7 +257,7 @@ Cena: 100g Pasta con pechuga de pollo. \n
       Queso fresco. \n
 Merienda despu?s de la cena: 1 taza de fruta. \n').
 
-dieta("NA", "NA",'avanzado','
+dieta(no, no,'avanzado','
 Le recomendamiendo una dieta para niveles avanzados y para personas sin padecimientos,\n
 por lo que puedes empezar con el siguiente plan alimenticio bajo en grasas.\n
 Desayuno:   180g de queso fresco 0%. \n
