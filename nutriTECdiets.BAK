@@ -1,3 +1,22 @@
+/** ---------- Tarea 2 NutriTEC CE-3104 ----------
+
+                    Gabriel Vargas
+                    Yendry Badilla
+                   Mauricio Calderon
+
+    ----------                          ----------
+*/
+
+
+/**
+Este archivo contiene la totalidad de las dietas del programa
+aqui llega la solicitud para asignarle una dieta al usuario
+dependiendo del nivel de ejercicio, tipo de dieta y padecimiento.
+
+
+*/
+
+
 %-------------Nivel Principiante-------------%
 
 dieta(keto, obesidad,'principiante','

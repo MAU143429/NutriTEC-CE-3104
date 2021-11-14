@@ -213,8 +213,6 @@ Cena: Solomillo con hongos y vainicas salteadas. \n
 dieta(vegetariana, celiaquia,'avanzado','
 Le recomendamiendo la dieta vegetariana, esta es para niveles avanzados y para personas con celiaquia ,\n
 por lo que puedes empezar con el siguiente plan alimenticio vegetariano.\n
-Le recomendamiendo la dieta keto, esta es para niveles avanzados y para personas con celiquia,\n
-por lo que puedes empezar con el siguiente plan alimenticio vegetariano. \n
 Desayuno:   2 tostadas integrales (40g) con una cucharada de aceite de oliva. \n
             1 vaso de batido de soya enriquecida, con una cucharadita de cacao en polvo. \n
             2 porciones de fruta. \n

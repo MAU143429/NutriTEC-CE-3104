@@ -38,6 +38,7 @@ saludo([dias|S],S).
 saludo([buenas|S],S).
 saludo([tardes|S],S).
 saludo([noches|S],S).
+saludo([pura vida|S],S).
 
 %-----------------------Verbos------------------------%
 % infinitivos se toman como verbos
